@@ -1,0 +1,64 @@
+/* Styles for the job listing */
+.job-listing {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-listing-item {
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.new-tag {
+    background-color: #e44d26;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.job-listing-icon img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.job-listing-content-a {
+    text-decoration: none;
+    color: #333;
+}
+
+.job-listing-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-listing-match {
+    font-size: 14px;
+    color: red;
+}
+
+.job-listing-content-cmp span {
+    font-size: 14px;
+}
+
+.job-listing-price {
+    font-size: 16px;
+}
+
+.job-listing-time {
+    display: flex;
+    align-items: center;
+}
+
+.fa-clock-o {
+    margin-right: 5px;
+}
+
+.bookmark-link i,
+.job-listing-share i {
+    cursor: pointer;
+    color: #333;
+}
