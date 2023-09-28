@@ -10,8 +10,8 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 if (isset($email, $password)) {
-    // Fetch hashed password and user_id from database
-    $stmt = $pdo->prepare('SELECT user_id, password FROM users WHERE email = ?');
+    // Fetch hashed password and id from database
+    $stmt = $pdo->prepare('SELECT id, password FROM users WHERE email = ?');
     $stmt->execute([$email]);
 
     if ($user = $stmt->fetch()) {
@@ -19,9 +19,9 @@ if (isset($email, $password)) {
 
         // Verify the password against the hash
         if (password_verify($password, $hashedPassword)) {
-            $_SESSION['user_id'] = $user['user_id'];
+            $_SESSION['id'] = $user['id'];
             $_SESSION['logged_in'] = true;
-            echo json_encode(['status' => 'success', 'message' => 'Login successful', 'user_id' => $user['user_id']]);
+            echo json_encode(['status' => 'success', 'message' => 'Login successful', 'id' => $user['id']]);
             exit;
         }
     }
