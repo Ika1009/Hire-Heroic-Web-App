@@ -9,13 +9,16 @@ $fullName = $_POST['full_name'];
 $location = $_POST['location']; // New field for location
 $jobPreference = $_POST['job_preference']; // New field for job_preference
 
-// Split the full name into first and last name
-$names = explode(' ', $fullName);
-$firstName = $names[0];
-$lastName = isset($names[1]) ? $names[1] : '';
+
 
 // Check if data is provided
-if (isset($email, $password, $firstName, $lastName, $location, $jobPreference)) {
+if (isset($email, $password, $fullName, $location, $jobPreference)) {
+
+    // Split the full name into first and last name
+    $names = explode(' ', $fullName);
+    $firstName = $names[0];
+    $lastName = isset($names[1]) ? $names[1] : '';
+    
     // First, check if the email already exists
     $stmt = $pdo->prepare('SELECT email FROM users WHERE email = ?');
     $stmt->execute([$email]);
@@ -33,8 +36,17 @@ if (isset($email, $password, $firstName, $lastName, $location, $jobPreference)) 
     echo json_encode(['status' => 'success', 'message' => 'User registered successfully']);
     exit;
 
-} else {
-    echo json_encode(['status' => 'error', 'message' => 'Email, password, location, and job_preference are required']);
+}else {
+    $missing_vars = [];
+    foreach(['email', 'password', 'fullName', 'location', 'jobPreference'] as $var) {
+        if (!isset($$var)) $missing_vars[] = $var;
+    }
+    echo json_encode([
+        'status' => 'error', 
+        'message' => 'Some variables are missing', 
+        'missing_vars' => $missing_vars
+    ]);
     exit;
 }
+
 ?>
