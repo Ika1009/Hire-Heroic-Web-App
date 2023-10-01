@@ -3,13 +3,11 @@ require 'db_conn.php';  // Include the database connection
 
 header('Content-Type: application/json');
 
-$email = $_POST['email'];
-$password = $_POST['password'];
-$fullName = $_POST['full_name'];
-$location = $_POST['location']; // New field for location
-$jobPreference = $_POST['job_preference']; // New field for job_preference
-
-
+$email = isset($_POST['email']) ? $_POST['email'] : null;
+$password = isset($_POST['password']) ? $_POST['password'] : null;
+$fullName = isset($_POST['full_name']) ? $_POST['full_name'] : null;
+$location = isset($_POST['location']) ? $_POST['location'] : null;
+$jobPreference = isset($_POST['job_preference']) ? $_POST['job_preference'] : null;
 
 // Check if data is provided
 if (isset($email, $password, $fullName, $location, $jobPreference)) {
