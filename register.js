@@ -14,7 +14,7 @@ signupForm.addEventListener('submit', function(e) {
     .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            alert('Signup successful!');
+            window.location.href = "login.php";
             // Redirect or do something else upon successful signup
         } else {
             alert('Signup failed: ' + data.message);
