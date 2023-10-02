@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
         if (data.status === 'success') {
             // Handle successful login
             //setSecureCookie("user_id", data.user_id, 1); // Set user_id as a cookie
-            window.location.href = "report/report.php";
+            window.location.href = "jobList.html";
         } else {
             // Handle unsuccessful login
             alert(data.message);
