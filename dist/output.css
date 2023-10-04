@@ -840,6 +840,16 @@ video {
   border-color: rgb(214 180 143 / var(--tw-border-opacity));
 }
 
+.focus\:border-accent-200:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(227 206 181 / var(--tw-border-opacity));
+}
+
+.focus\:border-secondary-200:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(227 205 181 / var(--tw-border-opacity));
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
