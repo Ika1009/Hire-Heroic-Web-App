@@ -5,39 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="jobList.css">
     <title>Jobs Listing</title>
+    <link href="dist/output3.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        body, h2, h3, p, input, button, a {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <ul class="job-listing" id="job-list">
-        <li class="job-listing-item">
-            <span class="new-tag">New</span>
-            <div class="job-listing-post">
-                <div class="job-listing-icon-content">
-                    <div class="job-listing-icon">
-                        <img class="company_logo" src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies">
-                    </div>
-                    <a href="https://pangian.com/job/senior-account-claims-representative-workers-compensation-opportunity-remote/" target="_blank" class="job-listing-content-a">
-                        <div class="job-listing-content">
-                            <div class="job-listing-content-title">
-                                <span class="job-listing-title">Senior Account Claims Representative Workers Compensation Opportunity (Remote)</span>
-                                <span class="job-listing-match"> | Low Match</span>
-                            </div>
-                            <div class="job-listing-content-cmp">
-                                <span>PMA Companies</span>
-                            </div>
-                            <div class="job-listing-content-price">
-                                <span class="job-listing-price">Competitive Salary</span>
-                                <span class="job-listing-country">| United States | </span>
-                                <span class="job-listing-cate">Other</span>
-                            </div>
-                            <div class="job-listing-content-price">
-                                <span class="job-listing-cate job-listing-time"><i class="fa fa-clock-o"></i>5 hours ago</span>
-                            </div>
-                        </div>
-                    </a>
+        <li class="bg-white shadow-lg rounded-lg overflow-hidden mb-6 flex">
+            <!-- Image on the Left (32x32 size) -->
+            <div class="w-32 h-32 relative">
+                <span class="bg-green-500 text-white py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>
+                <img src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies" class="w-full h-full">
+            </div>
+            <!-- Job Details on the Right -->
+            <div class="w-2/3 p-4">
+                <a href="https://pangian.com/job/senior-account-claims-representative-workers-compensation-opportunity-remote/" target="_blank" class="text-blue-600 hover:underline">
+                    <h2 class="text-xl font-semibold mb-2">Senior Account Claims Representative Workers Compensation Opportunity (Remote)</h2>
+                </a>
+                <div class="text-gray-700 mb-2">
+                    <span class="font-semibold">Company:</span> PMA Companies
+                </div>
+                <div class="text-gray-700 mb-2">
+                    <span class="font-semibold">Salary:</span> Competitive Salary
+                </div>
+                <div class="text-gray-700 mb-2">
+                    <span class="font-semibold">Location:</span> United States
+                </div>
+                <div class="text-gray-700 mb-2">
+                    <span class="font-semibold">Category:</span> Other
+                </div>
+                <div class="text-gray-500">
+                    <span class="font-semibold"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </span> 5 hours ago
                 </div>
             </div>
         </li>
     </ul>
+    
+    
     <script src="jobList.js"></script>
 </body>
 </html>
