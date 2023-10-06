@@ -21,7 +21,7 @@
                         <div><img class="cursor-pointer w-32" src="images/UltraCv.png" alt="icon"></div>
                 </div>
                 <div class="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
-                    <h2 class="text-center text-4xl text-custom-dark-blue font-display font-semibold lg:text-left xl:text-5xl xl:text-bold">
+                    <h2 class="text-center text-4xl text-text-800 font-display font-semibold lg:text-left xl:text-5xl xl:text-bold">
                         Log in</h2>
                     <div class="mt-12">
                         <form>
@@ -46,10 +46,10 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden lg:flex items-center justify-center bg-background-100 flex-1 h-screen">
+            <a href="javascript:history.back();" class="hidden lg:flex items-center justify-center bg-background-100 flex-1 h-screen">
                 <div class="max-w-xs transform duration-200 hover:scale-110 cursor-pointer">
                     <svg class="w-5/6 mx-auto" xmlns="http://www.w3.org/2000/svg" id="f080dbb7-9b2b-439b-a118-60b91c514f72" data-name="Layer 1" viewBox="0 0 528.71721 699.76785">
-                        <title>Login</title>
+                        <title>Go back</title>
                         <rect y="17.06342" width="444" height="657" fill="#535461"/>
                         <polygon points="323 691.063 0 674.063 0 17.063 323 0.063 323 691.063" fill="#fab76b"/>
                         <circle cx="296" cy="377.06342" r="4" fill="#535461"/>
@@ -78,10 +78,11 @@
                         <path d="M775.8586,448.93948l-13,8s-50,34-24,40,41-24,41-24l10-12Z" transform="translate(-335.6414 -100.11607)" fill="#ffb8b8"/>
                         <path d="M849.8586,301.93948l9,9s6,84-6,101-67,63-70,60-22-18-18-20,57.18287-57.56942,57.18287-57.56942l-4.18287-77.43058Z" transform="translate(-335.6414 -100.11607)" opacity="0.1"/>
                         <path d="M853.8586,298.93948l9,9s6,84-6,101-67,63-70,60-22-18-18-20,57.18287-57.56942,57.18287-57.56942l-4.18287-77.43058Z" transform="translate(-335.6414 -100.11607)" fill="#fab76b"/>
-                        <path d="M786.797,157.64461s-11.5575-4.20273-27.31774,4.72807l8.40546,2.10136s-12.60819,1.05068-14.18421,17.8616h5.77875s-3.67739,14.70955,0,18.91228l2.364-4.4654,6.82943,13.65887,1.576-6.82944,3.15205,1.05069,2.10137-11.03217s5.25341,7.88012,9.45614,8.40546V195.2065s11.5575,13.13352,15.23489,12.60818l-5.25341-7.35477,7.35477,1.576-3.152-5.25341,18.91228,5.25341-4.20273-5.25341,13.13352,4.20273,6.3041,2.6267s8.9308-20.4883-3.67739-34.67251S798.61712,151.60318,786.797,157.64461Z" transform="translate(-335.6414 -100.11607)" fill="#2f2e41"/>
+                        <path d="M786.797,157.64461s-11.5575-4.20273-27.31774,4.72807l8.40546,2.10136s-12.60819,1.05068-14.18421,17.8616h5.77875s-3.67739,14.70955,0,18.91228l2.364-4.4654,6.82943,13.65887,1.576-6.82944,3.15205,1.05069,2.10137-11.03217s5.25341,7.88012,9.45614,8.40546V195.2065s11.5575,13.13352,15.23489,12.60818l-5.25341-7.35477,7.35477,1.576-3.152-5.25341,18.91228,5.25341-4.20273-5.25341,13.13352,4.20273,6.3041,2.6267s8.9308-20.4883-3.67739-34.67251S798.61712,151.60318,786.797,157.64461Z" transform="translate(-335.6414 -100.11607)" fill="#2f2e41"/> 
                     </svg>
                 </div>
-            </div>
+            </a>
+
         </div>
         <script src="login.js"></script>
     </body>
