@@ -24,7 +24,7 @@
           </a>
           <div class="flex md:order-2">
           <?php
-                if (!isset($_SESSION['id']) || $_SESSION['id'] != 0) {  
+                if (!isset($_SESSION['id'])) {  
                 ?>
                     <a href="login.php" type="button"
                     class="text-background-50 bg-primary1 hover:bg-primary-400 focus:ring-4 focus:outline-none text-md rounded-lg px-4 py-2 text-center mr-3 md:mr-0"> Log In</a>
@@ -48,7 +48,7 @@
                   class="block py-2 pl-3 pr-4 text-primary1 scale-125 underline rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Pricing</a>
               </li>
                 <?php
-                    if (isset($_SESSION['id']) && $_SESSION['id'] == 0) {  
+                    if (isset($_SESSION['id'])) {  
                 ?>
                     <li>
                         <a href="profilePage.html" class="block py-2 pl-3 pr-4 text-primary1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
@@ -205,9 +205,20 @@
                 <li>
                     <a href="pricing.php" class="mr-4 hover:underline text-base md:mr-6 ">Pricing</a>
                 </li>
-                <li>
-                    <a href="login.php" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-background-50 bg-primary1 text-base md:mr-6 ">Log In</a>
-                </li>
+                <?php
+                    if (isset($_SESSION['id'])) {  
+                ?>
+                    <li>
+                        <a href="profilePage.html" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-primary1 text-base md:mr-6 "><i class="fa fa-user" aria-hidden="true"></i></a>
+                    </li>
+                <?php
+                    } else { 
+                ?>
+                    <li>
+                        <a href="login.php" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-background-50 bg-primary1 text-base md:mr-6 ">Log In</a>
+                    </li>
+                <?php } ?>
+
             </ul>
         </div>
         <hr class="my-2 border-gray-300 sm:mx-auto lg:my-4" />
