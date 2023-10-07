@@ -16,7 +16,42 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-background-50">
+    <nav class="bg-transparent border border-b-gray-300">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:pr-8 pr-0">
+          <a href="index.html" class="flex items-center">
+            <img src="images/UltraCv.png" class="w-20 mr-3" alt="UltraCv Logo" />
+          </a>
+          <div class="flex md:order-2">
+            
+            
+            <button data-collapse-toggle="navbar-cta" type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              aria-controls="navbar-cta" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
+          </div>
+          <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ml-auto mr-8" id="navbar-cta">
+            <ul
+              class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+              <li>
+                <a href="pricing.html"
+                  class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Pricing</a>
+              </li>
+              <li>
+                <a href="profilePage.html"
+                  class="block py-2 pl-3 pr-4 text-primary1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0"><i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
     <ul class="job-listing" id="job-list">
         <li class="bg-white shadow-lg rounded-lg overflow-hidden mb-6 flex">
             <!-- Image on the Left (32x32 size) -->
@@ -48,7 +83,26 @@
             </div>
         </li>
     </ul>
-    
+
+    <footer class="bg-transparent rounded-lg border-t-gray-300 border ">
+        <div class="w-full max-w-screen-xl mx-auto pb-2 px-4 md:pb-4">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/UltraCv.png" class="w-24" alt="UltraCv Logo" />
+                  </a>
+                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
+                    <li>
+                        <a href="pricing.html" class="mr-4 hover:underline text-base md:mr-6 ">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="profilePage.html" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-primary1 text-base md:mr-6 "><i class="fa fa-user" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="my-2 border-gray-300 sm:mx-auto lg:my-4" />
+            <span class="block text-sm text-gray-500 sm:text-center">© 2023 <a href="https://www.hireheroic.com" class="hover:underline text-primary1">Hire Heroic™</a>. All Rights Reserved.</span>
+        </div>
+    </footer>
     
     <script src="jobList.js"></script>
 </body>

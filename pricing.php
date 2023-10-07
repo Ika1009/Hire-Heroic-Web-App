@@ -43,10 +43,23 @@
                 <a href="pricing.html"
                   class="block py-2 pl-3 pr-4 text-primary1 scale-125 underline rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Pricing</a>
               </li>
-              <li>
-                <a href="register.html"
-                  class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Sign In</a>
-              </li>
+                <?php
+                    if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == 0) {  
+                ?>
+                        <li>
+                            <a href="register.html" class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
+                                Sign In
+                            </a>
+                        </li>
+                <?php
+                    } else { 
+                ?>
+                    <li>
+                        <a href="profilePage.html" class="block py-2 pl-3 pr-4 text-primary1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                <?php } ?>
             </ul>
           </div>
         </div>
