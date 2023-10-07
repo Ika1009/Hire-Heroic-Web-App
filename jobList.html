@@ -52,37 +52,30 @@
         </div>
       </nav>
 
-    <ul class="job-listing" id="job-list">
-        <li class="bg-white shadow-lg rounded-lg overflow-hidden mb-6 flex">
-            <!-- Image on the Left (32x32 size) -->
-            <div class="w-32 h-32 relative">
-                <span class="bg-green-500 text-white py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>
-                <img src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies" class="w-full h-full">
-            </div>
-            <!-- Job Details on the Right -->
-            <div class="w-2/3 p-4">
-                <a href="https://pangian.com/job/senior-account-claims-representative-workers-compensation-opportunity-remote/" target="_blank" class="text-blue-600 hover:underline">
-                    <h2 class="text-xl font-semibold mb-2">Senior Account Claims Representative Workers Compensation Opportunity (Remote)</h2>
-                </a>
-                <div class="text-gray-700 mb-2">
-                    <span class="font-semibold">Company:</span> PMA Companies
-                </div>
-                <div class="text-gray-700 mb-2">
-                    <span class="font-semibold">Salary:</span> Competitive Salary
-                </div>
-                <div class="text-gray-700 mb-2">
-                    <span class="font-semibold">Location:</span> United States
-                </div>
-                <div class="text-gray-700 mb-2">
-                    <span class="font-semibold">Category:</span> Other
-                </div>
-                <div class="text-gray-500">
-                    <span class="font-semibold"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                    </span> 5 hours ago
-                </div>
-            </div>
-        </li>
-    </ul>
+
+      <div class="max-w-screen-xl mx-auto mt-6 px-4 w-full">
+        <div class="flex flex-col md:flex-row items-center space-y-0 md:space-x-4 mx-auto w-1/2 mb-4">
+            <input type="text" class="border border-gray-300 rounded-md py-2 px-4 mb-2 sm:mb-0" placeholder="Keywords">
+            <input type="text" class="border border-gray-300 rounded-md py-2 px-4" placeholder="Location">
+        </div>
+      
+        <!-- Categories -->
+        <div class="flex flex-wrap space-x-4 mb-4 justify-center">
+          <div class="category bg-primary-300 text-background-50 p-2 rounded-md cursor-pointer" id="category-all">All</div>
+          <div class="category bg-white p-2 rounded-md cursor-pointer" id="category-1">Category 1</div>
+          <div class="category bg-white p-2 rounded-md cursor-pointer" id="category-2">Category 2</div>
+        </div>
+      
+      </div>
+
+    <!-- Scrollable List of Jobs -->
+    <div class="max-w-screen-xl mx-auto px-4">
+        <div class="scrollable-list">
+            <ul class="job-list" id="job-list">
+
+            </ul>
+        </div>
+    </div>
 
     <footer class="bg-transparent rounded-lg border-t-gray-300 border ">
         <div class="w-full max-w-screen-xl mx-auto pb-2 px-4 md:pb-4">
