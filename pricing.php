@@ -40,7 +40,7 @@
             <ul
               class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
               <li>
-                <a href="pricing.html"
+                <a href="pricing.php"
                   class="block py-2 pl-3 pr-4 text-primary1 scale-125 underline rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Pricing</a>
               </li>
                 <?php
@@ -198,7 +198,7 @@
               </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
                 <li>
-                    <a href="pricing.html" class="mr-4 hover:underline text-base md:mr-6 ">Pricing</a>
+                    <a href="pricing.php" class="mr-4 hover:underline text-base md:mr-6 ">Pricing</a>
                 </li>
                 <li>
                     <a href="login.php" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-background-50 bg-primary1 text-base md:mr-6 ">Log In</a>
