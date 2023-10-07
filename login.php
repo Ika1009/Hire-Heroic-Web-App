@@ -98,5 +98,5 @@
 </html>
 <?php
     } else {
-        header('Location: jobList.js');
+        header('Location: jobList.html');
     }
