@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing</title>
     <link href="dist/output2.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
 
@@ -44,7 +44,7 @@
                   class="block py-2 pl-3 pr-4 text-primary1 scale-125 underline rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Pricing</a>
               </li>
                 <?php
-                    if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == 0) {  
+                    if (isset($_SESSION['id']) && $_SESSION['id'] == 0) {  
                 ?>
                         <li>
                             <a href="register.html" class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
