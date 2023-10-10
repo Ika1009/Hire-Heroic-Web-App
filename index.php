@@ -53,10 +53,18 @@
                         <a href="index.php"
                             class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Home</a>
                     </li>
-                    <li>
-                        <a href="jobList.html"
-                            class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Job List</a>
-                    </li>
+                    <?php
+                        // Check if the user is logged in
+                        if (isset($_SESSION['id'])) {
+                            $href = 'jobList.html'; // Set the link for logged-in users
+                        } else {
+                            $href = 'login.php'; // Set the link for users who are not logged in
+                        }
+                        ?>
+
+                        <li>
+                            <a href="<?php echo $href; ?>" class="mr-4 hover:underline text-base md:mr-6">job List</a>
+                        </li>
                     <li>
                         <a href="pricing.php"
                             class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Pricing</a>
@@ -189,11 +197,19 @@
                     <li>
                         <a href="pricing.php" class="mr-4 hover:underline text-base md:mr-6 ">Pricing</a>
                     </li>
+                    <?php
+                    if (isset($_SESSION['id'])) {  
+                ?>
                     <li>
-                        <a href="login.php"
-                            class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-background-50 bg-primary1 text-base md:mr-6 ">Log
-                            In</a>
+                        <a href="profilePage.html" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-primary1 text-base md:mr-6 "><i class="fa fa-user" aria-hidden="true"></i></a>
                     </li>
+                <?php
+                    } else { 
+                ?>
+                    <li>
+                        <a href="login.php" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-background-50 bg-primary1 text-base md:mr-6 ">Log In</a>
+                    </li>
+                <?php } ?>
                 </ul>
             </div>
             <hr class="my-2 border-gray-300 sm:mx-auto lg:my-4" />
