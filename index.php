@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,10 +28,12 @@
                 <img src="images/UltraCv.png" class="w-20 mr-3" alt="UltraCv Logo" />
             </a>
             <div class="flex md:order-2">
-
-                <a href="login.php" type="button"
-                    class="text-background-50 bg-primary1 hover:bg-primary-400 focus:ring-4 focus:outline-none text-md rounded-lg px-4 py-2 text-center mr-3 md:mr-0">
-                    Log In</a>
+                <?php
+                if (!isset($_SESSION['id'])) {  
+                ?>
+                    <a href="login.php" type="button"
+                    class="text-background-50 bg-primary1 hover:bg-primary-400 focus:ring-4 focus:outline-none text-md rounded-lg px-4 py-2 text-center mr-3 md:mr-0"> Log In</a>
+                <?php } ?>
                 <button data-collapse-toggle="navbar-cta" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-cta" aria-expanded="false">
@@ -45,14 +50,35 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
                     <li>
+                        <a href="index.php"
+                            class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Home</a>
+                    </li>
+                    <li>
+                        <a href="jobList.html"
+                            class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Job List</a>
+                    </li>
+                    <li>
                         <a href="pricing.php"
                             class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Pricing</a>
                     </li>
+                    <?php
+                    if (isset($_SESSION['id'])) {  
+                ?>
                     <li>
-                        <a href="register.html"
-                            class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Sign
-                            In</a>
+                        <a href="profilePage.html" class="block py-2 pl-3 pr-4 text-primary1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
                     </li>
+                <?php
+                    } else { 
+                ?>
+
+                    <li>
+                            <a href="register.html" class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
+                                Sign In
+                            </a>
+                        </li>
+                <?php } ?>
                 </ul>
             </div>
         </div>
@@ -145,6 +171,21 @@
                     <img src="images/UltraCv.png" class="w-24" alt="UltraCv Logo" />
                 </a>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
+                    <li>
+                        <a href="index.php" class="mr-4 hover:underline text-base md:mr-6 ">Home</a>
+                    </li>
+                        <?php
+                        // Check if the user is logged in
+                        if (isset($_SESSION['id'])) {
+                            $href = 'jobList.html'; // Set the link for logged-in users
+                        } else {
+                            $href = 'login.html'; // Set the link for users who are not logged in
+                        }
+                        ?>
+
+                        <li>
+                            <a href="<?php echo $href; ?>" class="mr-4 hover:underline text-base md:mr-6">job List</a>
+                        </li>
                     <li>
                         <a href="pricing.php" class="mr-4 hover:underline text-base md:mr-6 ">Pricing</a>
                     </li>
