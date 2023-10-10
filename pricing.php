@@ -22,7 +22,7 @@
     <!-- Navbar -->
     <nav class="bg-transparent border border-b-gray-300">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:pr-8 pr-0">
-          <a href="index.html" class="flex items-center">
+          <a href="index.php" class="flex items-center">
             <img src="images/UltraCv.png" class="w-20 mr-3" alt="UltraCv Logo" />
           </a>
           <div class="flex md:order-2">

@@ -24,7 +24,7 @@
     <!-- Navbar -->
     <nav class="bg-transparent border border-b-gray-300">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:pr-8 pr-0">
-            <a href="index.html" class="flex items-center">
+            <a href="index.php" class="flex items-center">
                 <img src="images/UltraCv.png" class="w-20 mr-3" alt="UltraCv Logo" />
             </a>
             <div class="flex md:order-2">
@@ -167,7 +167,7 @@
     <footer class="bg-transparent rounded-lg border-t-gray-300 border ">
         <div class="w-full max-w-screen-xl mx-auto pb-2 px-4 md:pb-4">
             <div class="sm:flex sm:items-center sm:justify-between">
-                <a href="index.html" class="flex items-center">
+                <a href="index.php" class="flex items-center">
                     <img src="images/UltraCv.png" class="w-24" alt="UltraCv Logo" />
                 </a>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
@@ -179,7 +179,7 @@
                         if (isset($_SESSION['id'])) {
                             $href = 'jobList.html'; // Set the link for logged-in users
                         } else {
-                            $href = 'login.html'; // Set the link for users who are not logged in
+                            $href = 'login.php'; // Set the link for users who are not logged in
                         }
                         ?>
 
