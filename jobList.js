@@ -195,14 +195,14 @@ const sample_response_body =
 
 
 try {
-  // const response = await fetch('https://indeed11.p.rapidapi.com/', options);
-  // if(response.ok) {
-  //   const data = await response.json().data;
-  //   console.log(data);
-  // } else {
-  //   console.error('Response Error:', response);
-  // }
-  let body = sample_response_body;
+  const response = await fetch('https://indeed11.p.rapidapi.com/', options);
+  if(response.ok) {
+    const data = await response.json().data;
+    console.log(data);
+  } else {
+    console.error('Response Error:', response);
+  }
+  //let body = sample_response_body;
   const jobs = body;
 
   // Assume you have a ul or ol with id 'job-list' in your HTML
@@ -231,6 +231,7 @@ try {
 
     // Set its content
     li.innerHTML = `
+              <a href="${url}" target="_blank" class="block w-full h-full absolute top-0 left-0" aria-hidden="true"></a>
                 <div class="w-full sm:w-52 h-52 relative">
                     ${newTag}
                     <img src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies" class="w-full h-full object-cover">
