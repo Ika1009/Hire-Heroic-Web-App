@@ -20,16 +20,17 @@ async function fetchAndPopulateJobs() {
   try {
     const response = await fetch(url, options);
     console.log(response);
-    
+
+    let jobs;
     if(response.ok) {
       const jsonResponse = await response.json();
-      const jobs = jsonResponse.data; // Assuming the data is structured with a "data" key
+      jobs = jsonResponse.data; // Assuming the data is structured with a "data" key
       console.log(jobs);
     } else {
       console.error('Response Error:', response);
     }
     //let body = sample_response_body;
-    const jobs = body;
+    // const jobs = body;
 
     // Assume you have a ul or ol with id 'job-list' in your HTML
     const jobList = document.getElementById('job-list');
