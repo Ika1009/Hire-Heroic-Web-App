@@ -1,4 +1,4 @@
-// Updated options based on the axios example
+const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
 const options = {
   method: 'POST',
   headers: {
@@ -18,11 +18,13 @@ fetchAndPopulateJobs();
 
 async function fetchAndPopulateJobs() {
   try {
-    const response = await fetch('https://linkedin-jobs-search.p.rapidapi.com/', options);
+    const response = await fetch(url, options);
     console.log(response);
+    
     if(response.ok) {
-      const data = await response.json().data;
-      console.log(data);
+      const jsonResponse = await response.json();
+      const jobs = jsonResponse.data; // Assuming the data is structured with a "data" key
+      console.log(jobs);
     } else {
       console.error('Response Error:', response);
     }
