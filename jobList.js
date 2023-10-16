@@ -1,4 +1,3 @@
-fetchAndPopulateJobs();
 
 const options = {
   method: 'POST',
@@ -13,6 +12,8 @@ const options = {
     page: '1'
   })
 };
+
+fetchAndPopulateJobs();
 
 async function fetchAndPopulateJobs() {
   try {
