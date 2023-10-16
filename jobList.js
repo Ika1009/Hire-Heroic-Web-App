@@ -19,15 +19,26 @@ fetchAndPopulateJobs();
 async function fetchAndPopulateJobs() {
   try {
     const response = await fetch(url, options);
-    console.log(response);
+    console.log("Response:", response);
 
     let jobs;
     if(response.ok) {
-      const jsonResponse = await response.json();
-      jobs = jsonResponse.data; // Assuming the data is structured with a "data" key
-      console.log(jobs);
+        try {
+            // Log raw response text
+            const rawResponse = await response.text();
+            console.log("Raw Response:", rawResponse);
+            console.log("Body:", response.body)
+            // Try to parse the raw response as JSON
+            const jsonResponse = JSON.parse(rawResponse);
+            console.log("Parsed response:", jsonResponse);
+
+            jobs = jsonResponse.data; // Adjust this based on actual response structure
+            console.log("Parsed Jobs:", jobs);
+        } catch (error) {
+            console.error("JSON Parsing Error:", error);
+        }
     } else {
-      console.error('Response Error:', response);
+        console.error('Response Error:', response);
     }
     //let body = sample_response_body;
     // const jobs = body;
