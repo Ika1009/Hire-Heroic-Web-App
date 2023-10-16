@@ -1,10 +1,10 @@
-
+// Updated options based on the axios example
 const options = {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
     'X-RapidAPI-Key': '9212a11f9dmshc97838dd208b14dp1855e4jsn8d3a2ab0c424',
-    'X-RapidAPI-Host': 'indeed11.p.rapidapi.com'
+    'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
   },
   body: JSON.stringify({
     search_terms: 'Software Engineer',
@@ -13,11 +13,12 @@ const options = {
   })
 };
 
+
 fetchAndPopulateJobs();
 
 async function fetchAndPopulateJobs() {
   try {
-    const response = await fetch('https://indeed11.p.rapidapi.com/', options);
+    const response = await fetch('https://linkedin-jobs-search.p.rapidapi.com/', options);
     console.log(response);
     if(response.ok) {
       const data = await response.json().data;
