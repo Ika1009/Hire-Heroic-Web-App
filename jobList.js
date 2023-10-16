@@ -1,3 +1,5 @@
+fetchAndPopulateJobs();
+
 const options = {
   method: 'POST',
   headers: {
@@ -6,11 +8,99 @@ const options = {
     'X-RapidAPI-Host': 'indeed11.p.rapidapi.com'
   },
   body: JSON.stringify({
-    search_terms: 'sales manager',
+    search_terms: 'Software Engineer',
     location: 'United States',
     page: '1'
   })
 };
+
+async function fetchAndPopulateJobs() {
+  try {
+    const response = await fetch('https://indeed11.p.rapidapi.com/', options);
+    if(response.ok) {
+      const data = await response.json().data;
+      console.log(data);
+    } else {
+      console.error('Response Error:', response);
+    }
+    //let body = sample_response_body;
+    const jobs = body;
+
+    // Assume you have a ul or ol with id 'job-list' in your HTML
+    const jobList = document.getElementById('job-list');
+
+    // Loop through each job in the response
+    for (let i = 0; i < jobs.length; i++) {
+      const job = jobs[i];
+
+      // Now you can access each property of the job object
+      const date = job.date;
+      const jobTitle = job.job_title;
+      const companyName = job.company_name;
+      const location = job.location;
+      const url = job.url;
+      const summary = job.summary;
+      const salary = job.salary;
+
+      // Create an li element
+      const li = document.createElement('li');
+      li.className = 'job-listing-item';
+      li.classList.add('bg-background-50', 'shadow-lg', 'rounded-lg', 'mx-0', 'sm:mx-4', 'lg:mx-24', 'xl:mx-32', 'overflow-hidden', 'relative', 'mb-6', 'flex', 'flex-col', 'md:flex-row');
+
+      // Show the "new" box only if the date is "Just posted"
+      const newTag = date === 'Just posted' ? `<span class="bg-red-500 text-background-50 py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>` : '';
+
+      // Set its content
+      li.innerHTML = `
+                <a href="${url}" target="_blank" class="block w-full h-full absolute top-0 left-0" aria-hidden="true"></a>
+                  <div class="w-full sm:w-52 h-52 relative">
+                      ${newTag}
+                      <img src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies" class="w-full h-full object-cover">
+                  </div>
+                  <div class="w-full md:w-2/3 p-4 relative">
+                      <a href="https://pangian.com/job/senior-account-claims-representative-workers-compensation-opportunity-remote/" target="_blank" class="text-accent-500 hover:underline">
+                          <h2 class="text-xl text-accent-500 font-semibold mb-2">${jobTitle}</h2>
+                      </a>
+                      <div class="text-gray-700 mb-2">
+                          <span class="font-semibold">Company:</span> ${companyName}
+                      </div>
+                      <div class="text-gray-700 mb-2">
+                          <span class="font-semibold">Salary:</span> ${salary}
+                      </div>
+                      <div class="text-gray-700 mb-2">
+                          <span class="font-semibold">Location:</span> ${location}
+                      </div>
+                  </div>
+                  <div class="text-gray-500 absolute bottom-0 right-0 mb-1 mr-2 text-xs">
+                    <span class="font-semibold"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </span> ${date}
+                  </div>
+      `;
+
+      // Append the li to the job list
+      jobList.appendChild(li);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+const categories = document.querySelectorAll('.category');
+
+categories.forEach(category => {
+  category.addEventListener('click', () => {
+    // Toggle background color
+    category.classList.toggle('bg-white');
+    category.classList.toggle('bg-primary-300');
+    category.classList.toggle('text-background-50'); // Change to the desired color
+
+    // You can also add logic here to filter job listings based on the selected category
+  });
+});
+
+
+//https://rapidapi.com/jaypat87/api/indeed11
+
 const sample_response_body =
   [{
     "date": "Just posted",
@@ -192,91 +282,3 @@ const sample_response_body =
     "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
     "has_next_page": "true"
   }]
-
-
-try {
-  const response = await fetch('https://indeed11.p.rapidapi.com/', options);
-  if(response.ok) {
-    const data = await response.json().data;
-    console.log(data);
-  } else {
-    console.error('Response Error:', response);
-  }
-  //let body = sample_response_body;
-  const jobs = body;
-
-  // Assume you have a ul or ol with id 'job-list' in your HTML
-  const jobList = document.getElementById('job-list');
-
-  // Loop through each job in the response
-  for (let i = 0; i < jobs.length; i++) {
-    const job = jobs[i];
-
-    // Now you can access each property of the job object
-    const date = job.date;
-    const jobTitle = job.job_title;
-    const companyName = job.company_name;
-    const location = job.location;
-    const url = job.url;
-    const summary = job.summary;
-    const salary = job.salary;
-
-    // Create an li element
-    const li = document.createElement('li');
-    li.className = 'job-listing-item';
-    li.classList.add('bg-background-50', 'shadow-lg', 'rounded-lg', 'mx-0', 'sm:mx-4', 'lg:mx-24', 'xl:mx-32', 'overflow-hidden', 'relative', 'mb-6', 'flex', 'flex-col', 'md:flex-row');
-
-    // Show the "new" box only if the date is "Just posted"
-    const newTag = date === 'Just posted' ? `<span class="bg-red-500 text-background-50 py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>` : '';
-
-    // Set its content
-    li.innerHTML = `
-              <a href="${url}" target="_blank" class="block w-full h-full absolute top-0 left-0" aria-hidden="true"></a>
-                <div class="w-full sm:w-52 h-52 relative">
-                    ${newTag}
-                    <img src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies" class="w-full h-full object-cover">
-                </div>
-                <div class="w-full md:w-2/3 p-4 relative">
-                    <a href="https://pangian.com/job/senior-account-claims-representative-workers-compensation-opportunity-remote/" target="_blank" class="text-accent-500 hover:underline">
-                        <h2 class="text-xl text-accent-500 font-semibold mb-2">${jobTitle}</h2>
-                    </a>
-                    <div class="text-gray-700 mb-2">
-                        <span class="font-semibold">Company:</span> ${companyName}
-                    </div>
-                    <div class="text-gray-700 mb-2">
-                        <span class="font-semibold">Salary:</span> ${salary}
-                    </div>
-                    <div class="text-gray-700 mb-2">
-                        <span class="font-semibold">Location:</span> ${location}
-                    </div>
-                </div>
-                <div class="text-gray-500 absolute bottom-0 right-0 mb-1 mr-2 text-xs">
-                  <span class="font-semibold"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                  </span> ${date}
-                </div>
-    `;
-
-    // Append the li to the job list
-    jobList.appendChild(li);
-  }
-} catch (error) {
-  console.error('Error:', error);
-}
-
-
-const categories = document.querySelectorAll('.category');
-
-categories.forEach(category => {
-  category.addEventListener('click', () => {
-    // Toggle background color
-    category.classList.toggle('bg-white');
-    category.classList.toggle('bg-primary-300');
-    category.classList.toggle('text-background-50'); // Change to the desired color
-
-    // You can also add logic here to filter job listings based on the selected category
-  });
-});
-
-
-//https://rapidapi.com/jaypat87/api/indeed11
-
