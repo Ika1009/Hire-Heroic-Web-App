@@ -18,6 +18,7 @@ fetchAndPopulateJobs();
 async function fetchAndPopulateJobs() {
   try {
     const response = await fetch('https://indeed11.p.rapidapi.com/', options);
+    console.log(response);
     if(response.ok) {
       const data = await response.json().data;
       console.log(data);
