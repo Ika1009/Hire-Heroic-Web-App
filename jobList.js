@@ -18,25 +18,24 @@ fetchAndPopulateJobs();
 
 async function fetchAndPopulateJobs() {
   try {
-    const response = await fetch(url, options);
-    console.log("Response:", response);
+    // const response = await fetch(url, options);
+    // console.log("Response:", response);
 
-    let jobs;
-    if(response.ok) {
-        try {
-            // Log raw response text
-            const rawResponse = await response.text();
-            // console.log("Raw Response:", rawResponse);
-            jobs = JSON.parse(rawResponse);
-            console.log("Parsed Jobs:", jobs);
-        } catch (error) {
-            console.error("JSON Parsing Error:", error);
-        }
-    } else {
-        console.error('Response Error:', response);
-    }
-    //let body = sample_response_body;
-    // const jobs = body;
+    // let jobs;
+    // if(response.ok) {
+    //     try {
+    //         // Log raw response text
+    //         const rawResponse = await response.text();
+    //         // console.log("Raw Response:", rawResponse);
+    //         jobs = JSON.parse(rawResponse);
+    //         console.log("Parsed Jobs:", jobs);
+    //     } catch (error) {
+    //         console.error("JSON Parsing Error:", error);
+    //     }
+    // } else {
+    //     console.error('Response Error:', response);
+    //}
+    const jobs = sample_response_body;
 
     // Assume you have a ul or ol with id 'job-list' in your HTML
     const jobList = document.getElementById('job-list');
@@ -114,183 +113,280 @@ categories.forEach(category => {
 //https://rapidapi.com/jaypat87/api/indeed11
 
 const sample_response_body =
-  [{
-    "date": "Just posted",
-    "job_title": "Sales Manager",
-    "company_name": "Swire Coca-Cola",
-    "location": "Bellevue, WA",
-    "salary": "$75,475 - $94,344 a year",
-    "url": "https://www.indeed.com/rc/clk?jk=5fbaba1a7502d47a&fccid=7c88dd3822fc77f7&vjs=3",
-    "summary": "Who is Swire Coca-Cola? We are one of the largest bottlers of Coca-Cola and other beverage brands in America. Our 7,000 hardworking and passionate employees…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+[
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/python-engineer-remote-flexible-at-cps-inc-3236855873?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=9V8%2B%2F3IyQ71PuZgAiN8BBw%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-engineer-remote-flexible-at-cps-inc-3236855873",
+  "company_name": "CPS, Inc.",
+  "company_url": "https://www.linkedin.com/company/cps4jobs?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/cps4jobs",
+  "job_title": "Python Engineer - Remote Flexible",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-22",
+  "normalized_company_name": "Cps4jobs"
   },
   {
-    "date": "30th July 2023",
-    "job_title": "Production/ Sales Manager",
-    "company_name": "360 PAINTING OF PINEHURST",
-    "location": "Pinehurst, NC 28374",
-    "salary": "",
-    "url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0CoZx6RZ76Kz2BC5LaLJVXH_1oYGbR7vq7wgU_JS4Ka__sklYchdE95iAkMWBMUAi3efRoLE878xitkzda5Ol3A9Mrzsp-woAz4IZKCba7ixCga4uEu94OUz6yJF2kZRbBzj5owBO-fSDQF2XP3ykES9hziI_SmWk1djnAK1sY8dIaN0vfaz7A5bOV1yEOkx0VSYpYCNBrHHRAkSF_30NxGxDcRNanOCR2bjaEGzTjEoNxyHBsZyyEDi8hAQRrr0P8L06e-DBvSVUcsDPfOAyp34-WuIeG1uCPiOLbrrIkNEt9TLvEGnfN1ZrYcINgUVHyeqdKC_eILUQ3mf_2FXBoKZUuP1fkL7dKTbFP1r4V9ntW2n2L-d1s9R4xYA0oRseBStA5KsA7V2Y0rznaZRxbKRRJWu0VPl1MJbKWQJJGjTp6GB5mJPfuhEUoa-w53XpnKtoS8KOK6tqwVcV5OTPMvlE2DMeoygWavw4dge4MN6jFUqvcPrdfq-JSMrw87uOb73Y6dhjxOYsCwEwYtTMkyJWPLslHOrdUPV8x19eqab71Cg3CdXnLJGKpCGl-IYqaWzPsKeWXN9s2HdefmrXHL1pgobtl3Cd1IIN_zIOjh2asz8BaOpBjalJi4uIGURA__bxGLJTdoRyzF9n222SJYSNTOz6cTt-Lp53VDBXjnLgMZkk4WHwOGtR4H4tPr-i6ZuK4sA-irVrnFL9YToQb8dQ0rAIFF-XRzzU3DopdFvW-DJaBVqyj2XRfiL3z1XaetjdRDYn184whi_8qLs251du0ZEpA6fV2gFluj4c1_eNbS-OufY6GZ&xkcb=SoCC-_M3QzCwefQ9QR0KbzkdCdPP&p=1&fvj=0&vjs=3",
-    "summary": "Production/ Sales Manager 360 Painting of Pinehurst Production Manager Duties: Key Responsibilities and Duties (Weekly/Daily): - Recruit, interview, and…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-doghouse-recruitment-3463573962?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=zTd%2B8Gp9f8dUOAwc5zt8HA%3D%3D&position=2&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-doghouse-recruitment-3463573962",
+  "company_name": "Doghouse Recruitment",
+  "company_url": "https://nl.linkedin.com/company/doghouse-recruitment?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://nl.linkedin.com/company/doghouse-recruitment",
+  "job_title": "Python Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-05",
+  "normalized_company_name": "Doghouse recruitment"
   },
   {
-    "date": "Just posted",
-    "job_title": "Regional Sales Manager",
-    "company_name": "Humanscale",
-    "location": "Los Angeles, CA 90017 (Downtown area)",
-    "salary": "$85,536 - $124,763 a year",
-    "url": "https://www.indeed.com/rc/clk?jk=9e07899e6f47faed&fccid=9ade95319a5a0818&vjs=3",
-    "summary": "Company Overview: Humanscale is the premier designer and manufacturer of ergonomic products that improve health and comfort at work. We have a focus on…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/software-engineer-jupyterlab-python-integrations-at-pachyderm-inc-3412722302?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=KeLld%2BmsPknNHF15RxqW%2BQ%3D%3D&position=3&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-jupyterlab-python-integrations-at-pachyderm-inc-3412722302",
+  "company_name": "Pachyderm Inc.",
+  "company_url": "https://www.linkedin.com/company/pachyderm-inc-?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/pachyderm-inc-",
+  "job_title": "Software Engineer (JupyterLab/Python/Integrations)",
+  "job_location": "Chicago, IL",
+  "posted_date": "2022-12-02",
+  "normalized_company_name": "Pachyderm inc "
   },
   {
-    "date": "Just posted",
-    "job_title": "Institutional Relationship Manager",
-    "company_name": "CAPTRUST",
-    "location": "Remote in Township of Warren, NJ 07059",
-    "salary": "",
-    "url": "https://www.indeed.com/rc/clk?jk=6b0fc65cdda2485f&fccid=9c6b378c8ffe3b09&vjs=3",
-    "summary": "Overview: WHO are we looking for? CAPTRUST is seeking a dynamic Institutional Relationship Manager who will provide high-level service to new and existing…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-harvey-nash-3461872680?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=oGAXjv4XvffZRDpbkJ6DaA%3D%3D&position=4&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-harvey-nash-3461872680",
+  "company_name": "Harvey Nash",
+  "company_url": "https://uk.linkedin.com/company/harvey-nash?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://uk.linkedin.com/company/harvey-nash",
+  "job_title": "Python Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-03",
+  "normalized_company_name": "Harvey nash"
   },
   {
-    "date": "Just posted",
-    "job_title": "General Sales Manager - VW BRANDON",
-    "company_name": "Qvale Auto Group, Inc.",
-    "location": "Tampa, FL 33619",
-    "salary": "",
-    "url": "https://www.indeed.com/rc/clk?jk=8e04cb8c11edd0ae&fccid=037c8684178e3dc9&vjs=3",
-    "summary": "Qvale Auto Group has over 70 Years in the automotive industry, beginning in California and now owning and operating 3 dealerships in Florida. \"We are a team…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/software-engineer-python-at-lasalle-network-3407450515?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=33KOGDCCpYUfYtP0awmq0w%3D%3D&position=5&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-python-at-lasalle-network-3407450515",
+  "company_name": "LaSalle Network",
+  "company_url": "https://www.linkedin.com/company/lasalle-network?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lasalle-network",
+  "job_title": "Software Engineer (Python)",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-24",
+  "normalized_company_name": "Lasalle network"
   },
   {
-    "date": "Just posted",
-    "job_title": "Territory Sales Manager",
-    "company_name": "Prayon Inc",
-    "location": "Remote",
-    "salary": "$100,000 a year",
-    "url": "https://www.indeed.com/rc/clk?jk=cb637713b71ad14f&fccid=c9dac5f7119a835b&vjs=3",
-    "summary": "Sells products by identifying and meeting customer needs in designated territory. ESSENTIAL RESPONSIBILITIES & FUNCTIONS INCLUDE the following, others may be…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-django-web-developer-at-mess-3379251835?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=pP1wcshQ1QuH5ZvSDQzcAg%3D%3D&position=6&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-django-web-developer-at-mess-3379251835",
+  "company_name": "Mess",
+  "company_url": "https://www.linkedin.com/company/mess-marketing?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/mess-marketing",
+  "job_title": "Python/Django Web Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2022-11-28",
+  "normalized_company_name": "Mess marketing"
   },
   {
-    "date": "Just posted",
-    "job_title": "Regional Sales Manager",
-    "company_name": "AMETEK, Inc.",
-    "location": "Remote",
-    "salary": "Estimated $118K - $149K a year",
-    "url": "https://www.indeed.com/rc/clk?jk=abfc92159305acee&fccid=212b69108ea3ebdd&vjs=3",
-    "summary": "About Us: AMETEK is using innovation to make the world a better place, technology to improve lives, and talent to solve challenges that matter. We need…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-quantitative-developer-market-making-at-durlston-partners-3479253605?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=%2F0k%2BBNsSGi9AV5iQzR3d9g%3D%3D&position=7&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-quantitative-developer-market-making-at-durlston-partners-3479253605",
+  "company_name": "DURLSTON PARTNERS",
+  "company_url": "https://uk.linkedin.com/company/durlston-partners-llp?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://uk.linkedin.com/company/durlston-partners-llp",
+  "job_title": "Python Quantitative Developer - Market Making",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-13",
+  "normalized_company_name": "Durlston partners llp"
   },
   {
-    "date": "Just posted",
-    "job_title": "District Sales Manager",
-    "company_name": "Zips Car Wash",
-    "location": "Little Rock, AR 72212 (River Mountain area)",
-    "salary": "$60,000 - $80,000 a year",
-    "url": "https://www.indeed.com/rc/clk?jk=b85f8649cc8d3634&fccid=780d1c1c8927e256&vjs=3",
-    "summary": "Overview: A District Sales Manager will create and sustain programming efficiency through effective recruiting, site team management, market participation, &…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-ivy-tech-solutions-inc-3492285489?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=jyUTq9F6D4D1evT3UmQneA%3D%3D&position=8&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-ivy-tech-solutions-inc-3492285489",
+  "company_name": "IVY TECH SOLUTIONS INC",
+  "company_url": "https://www.linkedin.com/company/ivy-tech-solutions-inc?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/ivy-tech-solutions-inc",
+  "job_title": "Python Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-26",
+  "normalized_company_name": "Ivy tech solutions inc"
   },
   {
-    "date": "Just posted",
-    "job_title": "Sales - Store Manager",
-    "company_name": "Russell Cellular- Authorized Verizon Dealer",
-    "location": "Livingston, TN 38570",
-    "salary": "Up to $23 an hour",
-    "url": "https://www.indeed.com/rc/clk?jk=d52726e96ca1f8d5&fccid=368e41a6b383665d&vjs=3",
-    "summary": "Why Russell Cellular? Starting pay is up to $23 hourly! • Unlimited commissions based on performance and commission • Health, dental, vision, and life…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-developer-data-engineer-at-transmarket-group-3480827029?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=3BUvwNbhvCierH3RH1EVuQ%3D%3D&position=9&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-data-engineer-at-transmarket-group-3480827029",
+  "company_name": "TransMarket Group",
+  "company_url": "https://www.linkedin.com/company/transmarket-group-l.l.c.?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/transmarket-group-l.l.c.",
+  "job_title": "Python Developer / Data Engineer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-10",
+  "normalized_company_name": "Transmarket group l.l.c."
   },
   {
-    "date": "Just posted",
-    "job_title": "Sales - District Sales Manager",
-    "company_name": "Russell Cellular- Authorized Verizon Dealer",
-    "location": "Jackson, WY 83002",
-    "salary": "Estimated $61.4K - $77.7K a year",
-    "url": "https://www.indeed.com/rc/clk?jk=9325c875ce07ce8f&fccid=368e41a6b383665d&vjs=3",
-    "summary": "Why Russell Cellular? • Health, dental, vision, and life insurance as well as paid sick days and company holidays • Employer matched 401K after 1 year •…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-ivy-tech-solutions-inc-3493989617?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=%2FOkR81LuwJPTJ87DB8hsjA%3D%3D&position=10&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-ivy-tech-solutions-inc-3493989617",
+  "company_name": "IVY TECH SOLUTIONS INC",
+  "company_url": "https://www.linkedin.com/company/ivy-tech-solutions-inc?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/ivy-tech-solutions-inc",
+  "job_title": "Python Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-27",
+  "normalized_company_name": "Ivy tech solutions inc"
   },
   {
-    "date": "Just posted",
-    "job_title": "Account Manager- Grocery Retail",
-    "company_name": "Dirty Hands LLC",
-    "location": "Washington, DC 20005 (Logan Circle area)",
-    "salary": "$19.23 - $28.84 an hour",
-    "url": "https://www.indeed.com/rc/clk?jk=266d30759f7166ac&fccid=9a96292cfe9b43b2&vjs=3",
-    "summary": "This is a full-time position with a full wage range of $19.23 - $28.84 per hour with eligibility for a quarterly bonus. Starting salary is based on a variety…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/backend-python-developer-remote-at-braintrust-3486706546?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=btH8IeCJlcTLxvRUp2jaog%3D%3D&position=11&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/backend-python-developer-remote-at-braintrust-3486706546",
+  "company_name": "Braintrust",
+  "company_url": "https://www.linkedin.com/company/usebraintrust?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/usebraintrust",
+  "job_title": "Backend Python Developer [REMOTE]",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-17",
+  "normalized_company_name": "Usebraintrust"
   },
   {
-    "date": "Just posted",
-    "job_title": "Key Account Manager",
-    "company_name": "Schneider Electric",
-    "location": "Remote in Baltimore, MD 21210",
-    "salary": "",
-    "url": "https://www.indeed.com/rc/clk?jk=03071506ab0bef82&fccid=8dc4399ddb463d4a&vjs=3",
-    "summary": "Job Description: Schneider Electric™ creates connected technologies that reshape industries, transform cities and enrich lives. Our 160,000 employees thrive…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-compunnel-inc-3489338020?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=IKMVhNVO9p2o9cWyzdu99g%3D%3D&position=12&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-compunnel-inc-3489338020",
+  "company_name": "Compunnel Inc.",
+  "company_url": "https://www.linkedin.com/company/compunnel-software-group?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/compunnel-software-group",
+  "job_title": "Python Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-18",
+  "normalized_company_name": "Compunnel software group"
   },
   {
-    "date": "Just posted",
-    "job_title": "Sales Manager",
-    "company_name": "San Francisco Marriott Fisherman's Wharf",
-    "location": "San Francisco, CA 94133 (North Beach area)",
-    "salary": "$70,000 - $90,000 a year",
-    "url": "https://www.indeed.com/rc/clk?jk=cdd6f256d62ad484&fccid=99a191c83f5a5b93&vjs=3",
-    "summary": "Pay Range: $70,000-90,000 per year From basic benefits to added advantages, Crestline Hotels & Resorts does what it takes to take care of our Associates—both…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/python-data-engineer-at-harmer-3451692204?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=aefn4O1gaJx%2FeWn7q3jgOA%3D%3D&position=13&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-data-engineer-at-harmer-3451692204",
+  "company_name": "Harmer",
+  "company_url": "https://www.linkedin.com/company/harmer?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/harmer",
+  "job_title": "Python Data Engineer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-27",
+  "normalized_company_name": "Harmer"
   },
   {
-    "date": "Just posted",
-    "job_title": "Manager, Sales Planning",
-    "company_name": "Caleres Inc.",
-    "location": "St. Louis, MO 63105",
-    "salary": "Estimated $75.9K - $96.1K a year",
-    "url": "https://www.indeed.com/rc/clk?jk=e51bd2aab18ae156&fccid=2ac02422d1002007&vjs=3",
-    "summary": "Overview: We are Caleres, a global footwear company with brands that fit people’s lives. We are ferocious about fit and living our mission of inspiring…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
+  "job_url": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3480490621?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=s9%2FSlz1ns2y%2BFEsw2g4DKA%3D%3D&position=14&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3480490621",
+  "company_name": "Jefferson Frank",
+  "company_url": "https://www.linkedin.com/company/jefferson-frank?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/jefferson-frank",
+  "job_title": "Fully Remote!! AWS Python Engineer!! $150k!!",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-20",
+  "normalized_company_name": "Jefferson frank"
   },
   {
-    "date": "Just posted",
-    "job_title": "JDL - 3PL Sales Manager - Warehousing Solution/Fulfillment - Remote",
-    "company_name": "JD.com",
-    "location": "Remote in United States",
-    "salary": "$82,000 - $132,510 a year",
-    "url": "https://www.indeed.com/rc/clk?jk=50a296316cc8c7a2&fccid=68cb92e51cfd6a04&vjs=3",
-    "summary": "Location: New York, New York Job Type: Full-time Job Description JD Logistics is looking for a results-driven individual with supply chain sales experience…",
-    "current_page_num": "1",
-    "next_page_url": "https://www.indeed.com/jobs?q=sales+manager&l=United+States&radius=35&sort=date&start=10",
-    "has_next_page": "true"
-  }]
+  "job_url": "https://www.linkedin.com/jobs/view/python-data-engineer-at-cps-inc-3403516888?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=wrJVWQWtZQ%2F8I6wxbZHZaw%3D%3D&position=15&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-data-engineer-at-cps-inc-3403516888",
+  "company_name": "CPS, Inc.",
+  "company_url": "https://www.linkedin.com/company/cps4jobs?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/cps4jobs",
+  "job_title": "Python Data Engineer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-22",
+  "normalized_company_name": "Cps4jobs"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/python-applications-developer-devops-at-careeraddict-3494563272?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=W7TmcOFQMe%2FCDrLnKVMsvQ%3D%3D&position=16&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-applications-developer-devops-at-careeraddict-3494563272",
+  "company_name": "CareerAddict",
+  "company_url": "https://ie.linkedin.com/company/career-addict?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://ie.linkedin.com/company/career-addict",
+  "job_title": "Python Applications Developer - DevOps",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-24",
+  "normalized_company_name": "Career addict"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/full-stack-python-developer-at-ascendion-3489465405?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=XHLaHp%2BQzmGLccBF0qMTcA%3D%3D&position=17&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/full-stack-python-developer-at-ascendion-3489465405",
+  "company_name": "Ascendion",
+  "company_url": "https://www.linkedin.com/company/ascendion?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/ascendion",
+  "job_title": "Full Stack Python Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-22",
+  "normalized_company_name": "Ascendion"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3487491083?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=OmbCa9SVGBrMF1vj5Ukjwg%3D%3D&position=18&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3487491083",
+  "company_name": "Jefferson Frank",
+  "company_url": "https://www.linkedin.com/company/jefferson-frank?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/jefferson-frank",
+  "job_title": "Fully Remote!! AWS Python Engineer!! $150k!!",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-25",
+  "normalized_company_name": "Jefferson frank"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3490231583?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=bHwMIYeSYGwxaFefRu%2B8kw%3D%3D&position=19&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3490231583",
+  "company_name": "Jefferson Frank",
+  "company_url": "https://www.linkedin.com/company/jefferson-frank?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/jefferson-frank",
+  "job_title": "Fully Remote!! AWS Python Engineer!! $150k!!",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-26",
+  "normalized_company_name": "Jefferson frank"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3486317985?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=%2BayGyE7SUb8OSquawnCNOg%3D%3D&position=20&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3486317985",
+  "company_name": "Jefferson Frank",
+  "company_url": "https://www.linkedin.com/company/jefferson-frank?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/jefferson-frank",
+  "job_title": "Fully Remote!! AWS Python Engineer!! $150k!!",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-24",
+  "normalized_company_name": "Jefferson frank"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/python-web-developer-at-diverse-lynx-3484124702?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=tA3bIo3rFsjDhOnWeZ%2FdPw%3D%3D&position=21&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-web-developer-at-diverse-lynx-3484124702",
+  "company_name": "Diverse Lynx",
+  "company_url": "https://www.linkedin.com/company/diverselynx?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/diverselynx",
+  "job_title": "Python Web Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-21",
+  "normalized_company_name": "Diverselynx"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3479249369?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=JmkUURMI1cYx%2FQkrumr5HQ%3D%3D&position=22&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3479249369",
+  "company_name": "Jefferson Frank",
+  "company_url": "https://www.linkedin.com/company/jefferson-frank?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/jefferson-frank",
+  "job_title": "Fully Remote!! AWS Python Engineer!! $150k!!",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-19",
+  "normalized_company_name": "Jefferson frank"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/python-application-developer-at-request-technology-llc-3450827622?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=fX0bqE0eZWaf45nFtkibqQ%3D%3D&position=23&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-application-developer-at-request-technology-llc-3450827622",
+  "company_name": "Request Technology, LLC",
+  "company_url": "https://www.linkedin.com/company/request-technology?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/request-technology",
+  "job_title": "Python Application Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-02-17",
+  "normalized_company_name": "Request technology"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3478833362?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=fcpJZ5R8W9SrYzbctt5oUg%3D%3D&position=24&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/fully-remote%21%21-aws-python-engineer%21%21-%24150k%21%21-at-jefferson-frank-3478833362",
+  "company_name": "Jefferson Frank",
+  "company_url": "https://www.linkedin.com/company/jefferson-frank?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/jefferson-frank",
+  "job_title": "Fully Remote!! AWS Python Engineer!! $150k!!",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-18",
+  "normalized_company_name": "Jefferson frank"
+  },
+  {
+  "job_url": "https://www.linkedin.com/jobs/view/6372-1-python-developer-at-diverse-lynx-3475433204?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=9HqSWmEVQNgSxgmZ52LKpg%3D%3D&position=25&pageNum=0&trk=public_jobs_jserp-result_search-card",
+  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/6372-1-python-developer-at-diverse-lynx-3475433204",
+  "company_name": "Diverse Lynx",
+  "company_url": "https://www.linkedin.com/company/diverselynx?trk=public_jobs_jserp-result_job-search-card-subtitle",
+  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/diverselynx",
+  "job_title": "6372-1 Python Developer",
+  "job_location": "Chicago, IL",
+  "posted_date": "2023-01-14",
+  "normalized_company_name": "Diverselynx"
+  }
+  ]
