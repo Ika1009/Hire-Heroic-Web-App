@@ -33,6 +33,8 @@
                 ?>
                     <a href="login.php" type="button"
                     class="text-background-50 bg-primary1 hover:bg-primary-400 focus:ring-4 focus:outline-none text-md rounded-lg px-4 py-2 text-center mr-3 md:mr-0"> Log In</a>
+                    <a href="login.php" type="button"
+                    class="text-background-50 ml-4 bg-primary1 hover:bg-primary-400 focus:ring-4 focus:outline-none text-md rounded-lg px-4 py-2 text-center mr-3 md:mr-0"> Post a Job</a>
                 <?php } ?>
                 <button data-collapse-toggle="navbar-cta" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -51,7 +53,7 @@
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
                     <li>
                         <a href="index.php"
-                            class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Home</a>
+                            class="block hover:underline py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Home</a>
                     </li>
                     <?php
                         // Check if the user is logged in
@@ -63,11 +65,11 @@
                         ?>
 
                         <li>
-                            <a href="<?php echo $href; ?>" class="mr-4 hover:underline text-base md:mr-6">job List</a>
+                            <a href="<?php echo $href; ?>" class="hover:underline text-base">job List</a>
                         </li>
                     <li>
                         <a href="pricing.php"
-                            class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Pricing</a>
+                            class="block py-2 pr-4 hover:underline text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Pricing</a>
                     </li>
                     <?php
                     if (isset($_SESSION['id'])) {  
@@ -82,7 +84,7 @@
                 ?>
 
                     <li>
-                            <a href="register.html" class="block py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
+                            <a href="register.html" class="block py-2 pl-3 pr-4 hover:underline text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">
                                 Sign In
                             </a>
                         </li>
