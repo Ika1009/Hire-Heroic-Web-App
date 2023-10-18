@@ -45,13 +45,13 @@ async function fetchAndPopulateJobs() {
       const job = jobs[i];
 
       // Now you can access each property of the job object
-      const date = job.date;
+      const date = job.posted_date;
       const jobTitle = job.job_title;
       const companyName = job.company_name;
-      const location = job.location;
-      const url = job.url;
-      const summary = job.summary;
-      const salary = job.salary;
+      const location = job.job_location;
+      const jobUrl = job.linkedin_job_url_cleaned;
+      const companyUrl = job.linkedin_company_url_cleaned;
+      // const salary = job.salary;
 
       // Create an li element
       const li = document.createElement('li');
@@ -61,23 +61,26 @@ async function fetchAndPopulateJobs() {
       // Show the "new" box only if the date is "Just posted"
       const newTag = date === 'Just posted' ? `<span class="bg-red-500 text-background-50 py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>` : '';
 
+      //za salary ako zatreba
+      // <div class="text-gray-700 mb-2">
+      //     <span class="font-semibold">Salary:</span> ${salary}
+      // </div>
+
       // Set its content
       li.innerHTML = `
-                <a href="${url}" target="_blank" class="block w-full h-full absolute top-0 left-0" aria-hidden="true"></a>
+                <a href="${companyUrl}" target="_blank" class="block w-full h-full absolute top-0 left-0" aria-hidden="true"></a>
                   <div class="w-full sm:w-52 h-52 relative">
                       ${newTag}
                       <img src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies" class="w-full h-full object-cover">
                   </div>
                   <div class="w-full md:w-2/3 p-4 relative">
-                      <a href="https://pangian.com/job/senior-account-claims-representative-workers-compensation-opportunity-remote/" target="_blank" class="text-accent-500 hover:underline">
+                      <a href="${jobUrl}" target="_blank" class="text-accent-500 hover:underline">
                           <h2 class="text-xl text-accent-500 font-semibold mb-2">${jobTitle}</h2>
                       </a>
                       <div class="text-gray-700 mb-2">
                           <span class="font-semibold">Company:</span> ${companyName}
                       </div>
-                      <div class="text-gray-700 mb-2">
-                          <span class="font-semibold">Salary:</span> ${salary}
-                      </div>
+
                       <div class="text-gray-700 mb-2">
                           <span class="font-semibold">Location:</span> ${location}
                       </div>
@@ -86,6 +89,7 @@ async function fetchAndPopulateJobs() {
                     <span class="font-semibold"><i class="fa fa-clock-o" aria-hidden="true"></i>
                     </span> ${date}
                   </div>
+                </a>
       `;
 
       // Append the li to the job list
