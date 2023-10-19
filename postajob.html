@@ -7,8 +7,143 @@
     <title>Post a Job</title>
     <link href="dist/output1.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .custom-input {
+            border: 2px solid #e6d2bc;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            width: 100%;
+        }
+        .scrollable-div {
+            height: 85dvh;
+            overflow: auto;
+        }
+    </style>
 </head>
-<body>
-    
+<body class="bg-background-50 flex flex-col items-center justify-center h-screen">
+    <h1 class="text-4xl font-semibold text-accent1">Post a Job</h1>
+    <div class="max-w-2xl w-full py-4 bg-secondary-1 px-8 rounded-lg shadow-lg text-center scrollable-div">
+        <form class="flex flex-col items-start">
+            <div class="mb-8 w-full text-start">
+                <label for="first_name" class="block text-lg mb-2 font-medium text-accent1 text-left">First Name</label>
+                <input type="text" id="first_name" name="first_name" class="custom-input" required>
+            </div>
+
+            <div class="mb-8 w-full text-start">
+                <label for="last_name" class="block text-lg mb-2 font-medium text-accent1 text-left">Last Name</label>
+                <input type="text" id="last_name" name="last_name" class="custom-input" required>
+            </div>
+
+            <div class="mb-8 w-full text-start">
+                <label for="email" class="block text-lg mb-2 font-medium text-accent1 text-left">Email</label>
+                <input type="email" id="email" name="email" class="custom-input" required>
+            </div>
+
+            <div class="mb-8 w-full text-start">
+                <label for="company_name" class="block text-lg mb-2 font-medium text-accent1 text-left">Company Name</label>
+                <input type="text" id="company_name" name="company_name" class="custom-input" required>
+            </div>
+
+            <div class="mb-8 w-full text-start">
+                <p class="text-lg font-medium text-accent1 text-left">Number of Employees</p>
+                <div class="mt-2 space-y-2">
+                    <div class="flex items-start">
+                        <input type="radio" id="1-50" name="employees" value="1-50" class="form-radio">
+                        <label for="1-50" class="ml-2">1-50</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="50-500" name="employees" value="50-500" class="form-radio">
+                        <label for="50-500" class="ml-2">50-500</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="500-5000" name="employees" value="500-5000" class="form-radio">
+                        <label for="500-5000" class="ml-2">500-5000</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="5000+" name="employees" value="5000+" class="form-radio">
+                        <label for="5000+" class="ml-2">5000+</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 w-full">
+                <p class="text-lg mb-2 font-medium text-accent1 text-left">Which locations are you hiring in?</p>
+                <div class="mt-2 space-y-2">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="us" name="locations[]" value="US" class="form-checkbox">
+                        <label for="us" class="ml-2">US</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="remotely_us" name="locations[]" value="Remotely in the US" class="form-checkbox">
+                        <label for="remotely_us" class="ml-2">Remotely in the US</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="remotely_us" name="locations[]" value="Canada" class="form-checkbox">
+                        <label for="canada" class="ml-2">Canada</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="remotely_us" name="locations[]" value="Remotely in Canada" class="form-checkbox">
+                        <label for="remotely_canada" class="ml-2">Remotely in Canada</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="us" name="locations[]" value="UK" class="form-checkbox">
+                        <label for="uk" class="ml-2">UK</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="remotely_us" name="locations[]" value="Remotely in the UK" class="form-checkbox">
+                        <label for="remotely_uk" class="ml-2">Remotely in the UK</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="remotely_us" name="locations[]" value="Remotely Anywhere" class="form-checkbox">
+                        <label for="remotely_anywhere" class="ml-2">Remotely Anywhere</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="remotely_us" name="locations[]" value="Other" class="form-checkbox">
+                        <label for="other" class="ml-2">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 w-full">
+                <label for="hires_next_6-12" class="block text-lg mb-2 font-medium text-accent1 text-left">How many hires are you looking to make in the next 6-12 months (in the above locations)?</label>
+                <input type="number" id="hires_next_6-12" name="hires_next_6-12" class="custom-input" required>
+            </div>
+
+            <div class="mb-8 w-full">
+                <p class="text-lg mb-2 font-medium text-accent1 text-left">How did you hear about Simplify?</p>
+                <div class="mt-2 space-y-2">
+                    <div class="flex items-start">
+                        <input type="radio" id="linkedin" name="hear_about" value="LinkedIn" class="form-radio">
+                        <label for="linkedin" class="ml-2">LinkedIn</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="google_search" name="hear_about" value="Google Search" class="form-radio">
+                        <label for="google_search" class="ml-2">Google Search</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="google_search" name="hear_about" value="From a friend" class="form-radio">
+                        <label for="from_a_friend" class="ml-2">From a friend</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="google_search" name="hear_about" value="TikTok" class="form-radio">
+                        <label for="tiktok" class="ml-2">TikTok</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="google_search" name="hear_about" value="Instagram" class="form-radio">
+                        <label for="instagram" class="ml-2">Instagram</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="radio" id="google_search" name="hear_about" value="Other" class="form-radio">
+                        <label for="other" class="ml-2">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full">
+                <button type="submit" class="w-full bg-primary1 hover:bg-primary2 text-white font-semibold py-2 px-4 rounded">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
