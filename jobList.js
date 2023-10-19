@@ -71,7 +71,6 @@ async function fetchAndPopulateJobs() {
                 <a href="${companyUrl}" target="_blank" class="block w-full h-full absolute top-0 left-0" aria-hidden="true"></a>
                   <div class="w-full sm:w-52 h-52 relative">
                       ${newTag}
-                      <img src="https://pangian.com/wp-content/uploads/2023/06/PMA-Companies.jpg" alt="PMA Companies" class="w-full h-full object-cover">
                   </div>
                   <div class="w-full md:w-2/3 p-4 relative">
                       <a href="${jobUrl}" target="_blank" class="text-accent-500 hover:underline">

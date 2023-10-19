@@ -208,7 +208,7 @@
 <footer class="bg-transparent rounded-lg border-t-gray-300 border ">
     <div class="w-full max-w-screen-xl mx-auto pb-2 px-4 md:pb-4">
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="index.html" class="flex items-center">
+            <a href="index.php" class="flex items-center">
                 <img src="images/UltraCv.png" class="w-24" alt="UltraCv Logo" />
               </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
