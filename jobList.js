@@ -68,27 +68,17 @@ async function fetchAndPopulateJobs() {
 
       // Set its content
       li.innerHTML = `
-                <a href="${companyUrl}" target="_blank" class="block w-full h-full absolute top-0 left-0" aria-hidden="true"></a>
-                  <div class="w-full sm:w-52 h-52 relative">
-                      ${newTag}
-                  </div>
-                  <div class="w-full md:w-2/3 p-4 relative">
-                      <a href="${jobUrl}" target="_blank" class="text-accent-500 hover:underline">
-                          <h2 class="text-xl text-accent-500 font-semibold mb-2">${jobTitle}</h2>
-                      </a>
-                      <div class="text-gray-700 mb-2">
-                          <span class="font-semibold">Company:</span> ${companyName}
-                      </div>
-
-                      <div class="text-gray-700 mb-2">
-                          <span class="font-semibold">Location:</span> ${location}
-                      </div>
-                  </div>
-                  <div class="text-gray-500 absolute bottom-0 right-0 mb-1 mr-2 text-xs">
-                    <span class="font-semibold"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                    </span> ${date}
-                  </div>
+            <div class="bg-secondary-50 mx-auto max-w-xl shadow-md rounded-lg p-4 relative">
+                ${newTag}
+                <a href="${jobUrl}">
+                  <h2 class="text-xl font-semibold text-primary1 hover:underline mb-2">${jobTitle}</h2>
                 </a>
+
+                <p class="text-sm text-text1 mb-1">${companyName}</p>
+                <p class="text-sm text-text1 mb-10">${location}</p>
+                <div class="text-sm text-gray-400 absolute bottom-4 right-4">Posted ${date} days ago</div>
+                <a href="${companyUrl}" class="text-accent1 hover:underline absolute bottom-4 left-4">Learn More</a>
+            </div>
       `;
 
       // Append the li to the job list
