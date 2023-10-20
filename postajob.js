@@ -34,17 +34,16 @@ form.addEventListener("submit", function(event) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.message) {
+        // Navigate to another page only if the response status is 200
+        if (data.statusCode === 200) {
+            window.location.href = './index.html'; 
+        } else {
+            // Alert the user only if the operation wasn't successful
             alert(data.message);
-        }
-
-        // If the insertion was successful, navigate to another page
-        if (response.status === 200) {
-            window.location.href = 'path_to_another_page.html'; // <-- Replace with the path to the desired page
         }
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert('Uknown error occured');
+        alert('Unknown error occurred.');
     });
 });

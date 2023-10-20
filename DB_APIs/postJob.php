@@ -6,7 +6,7 @@ require 'db_conn.php';
 function sendJSONResponse($statusCode, $message) {
     header("Content-Type: application/json");
     http_response_code($statusCode);
-    echo json_encode(['message' => $message]);
+    echo json_encode(['statusCode' => $statusCode, 'message' => $message]);
     exit();
 }
 
