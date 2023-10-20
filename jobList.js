@@ -14,97 +14,6 @@ const options = {
 };
 
 
-fetchAndPopulateJobs();
-
-async function fetchAndPopulateJobs() {
-  try {
-    // const response = await fetch(url, options);
-    // console.log("Response:", response);
-
-    // let jobs;
-    // if(response.ok) {
-    //     try {
-    //         // Log raw response text
-    //         const rawResponse = await response.text();
-    //         // console.log("Raw Response:", rawResponse);
-    //         jobs = JSON.parse(rawResponse);
-    //         console.log("Parsed Jobs:", jobs);
-    //     } catch (error) {
-    //         console.error("JSON Parsing Error:", error);
-    //     }
-    // } else {
-    //     console.error('Response Error:', response);
-    //}
-    const jobs = sample_response_body;
-
-    // Assume you have a ul or ol with id 'job-list' in your HTML
-    const jobList = document.getElementById('job-list');
-
-    // Loop through each job in the response
-    for (let i = 0; i < jobs.length; i++) {
-      const job = jobs[i];
-
-      // Now you can access each property of the job object
-      const date = job.posted_date;
-      const jobTitle = job.job_title;
-      const companyName = job.company_name;
-      const location = job.job_location;
-      const jobUrl = job.linkedin_job_url_cleaned;
-      const companyUrl = job.linkedin_company_url_cleaned;
-      // const salary = job.salary;
-
-      // Create an li element
-      const li = document.createElement('li');
-      li.className = 'job-listing-item';
-      li.classList.add('bg-background-50', 'shadow-lg', 'rounded-lg', 'mx-0', 'sm:mx-4', 'lg:mx-24', 'xl:mx-32', 'overflow-hidden', 'relative', 'mb-6', 'flex', 'flex-col', 'md:flex-row');
-
-      // Show the "new" box only if the date is "Just posted"
-      const newTag = date === 'Just posted' ? `<span class="bg-red-500 text-background-50 py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>` : '';
-
-      //za salary ako zatreba
-      // <div class="text-gray-700 mb-2">
-      //     <span class="font-semibold">Salary:</span> ${salary}
-      // </div>
-
-      // Set its content
-      li.innerHTML = `
-            <div class="bg-secondary-50 mx-auto max-w-xl shadow-md rounded-lg p-4 relative">
-                ${newTag}
-                <a href="${jobUrl}">
-                  <h2 class="text-xl font-semibold text-primary1 hover:underline mb-2">${jobTitle}</h2>
-                </a>
-
-                <p class="text-sm text-text1 mb-1">${companyName}</p>
-                <p class="text-sm text-text1 mb-10">${location}</p>
-                <div class="text-sm text-gray-400 absolute bottom-4 right-4">Posted ${date} days ago</div>
-                <a href="${companyUrl}" class="text-accent1 hover:underline absolute bottom-4 left-4">Learn More</a>
-            </div>
-      `;
-
-      // Append the li to the job list
-      jobList.appendChild(li);
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
-
-const categories = document.querySelectorAll('.category');
-
-categories.forEach(category => {
-  category.addEventListener('click', () => {
-    // Toggle background color
-    category.classList.toggle('bg-white');
-    category.classList.toggle('bg-primary-300');
-    category.classList.toggle('text-background-50'); // Change to the desired color
-
-    // You can also add logic here to filter job listings based on the selected category
-  });
-});
-
-
-//https://rapidapi.com/jaypat87/api/indeed11
-
 const sample_response_body =
 [
   {
@@ -383,3 +292,94 @@ const sample_response_body =
   "normalized_company_name": "Diverselynx"
   }
   ]
+fetchAndPopulateJobs();
+
+async function fetchAndPopulateJobs() {
+  try {
+    // const response = await fetch(url, options);
+    // console.log("Response:", response);
+
+    // let jobs;
+    // if(response.ok) {
+    //     try {
+    //         // Log raw response text
+    //         const rawResponse = await response.text();
+    //         // console.log("Raw Response:", rawResponse);
+    //         jobs = JSON.parse(rawResponse);
+    //         console.log("Parsed Jobs:", jobs);
+    //     } catch (error) {
+    //         console.error("JSON Parsing Error:", error);
+    //     }
+    // } else {
+    //     console.error('Response Error:', response);
+    //}
+    const jobs = sample_response_body;
+
+    // Assume you have a ul or ol with id 'job-list' in your HTML
+    const jobList = document.getElementById('job-list');
+
+    // Loop through each job in the response
+    for (let i = 0; i < jobs.length; i++) {
+      const job = jobs[i];
+
+      // Now you can access each property of the job object
+      const date = job.posted_date;
+      const jobTitle = job.job_title;
+      const companyName = job.company_name;
+      const location = job.job_location;
+      const jobUrl = job.linkedin_job_url_cleaned;
+      const companyUrl = job.linkedin_company_url_cleaned;
+      // const salary = job.salary;
+
+      // Create an li element
+      const li = document.createElement('li');
+      li.className = 'job-listing-item';
+      li.classList.add('bg-background-50', 'shadow-lg', 'rounded-lg', 'mx-0', 'sm:mx-4', 'lg:mx-24', 'xl:mx-32', 'overflow-hidden', 'relative', 'mb-6', 'flex', 'flex-col', 'md:flex-row');
+
+      // Show the "new" box only if the date is "Just posted"
+      const newTag = date === 'Just posted' ? `<span class="bg-red-500 text-background-50 py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>` : '';
+
+      //za salary ako zatreba
+      // <div class="text-gray-700 mb-2">
+      //     <span class="font-semibold">Salary:</span> ${salary}
+      // </div>
+
+      // Set its content
+      li.innerHTML = `
+            <div class="bg-secondary-50 mx-auto max-w-xl shadow-md rounded-lg p-4 relative">
+                ${newTag}
+                <a href="${jobUrl}">
+                  <h2 class="text-xl font-semibold text-primary1 hover:underline mb-2">${jobTitle}</h2>
+                </a>
+
+                <p class="text-sm text-text1 mb-1">${companyName}</p>
+                <p class="text-sm text-text1 mb-10">${location}</p>
+                <div class="text-sm text-gray-400 absolute bottom-4 right-4">Posted ${date} days ago</div>
+                <a href="${companyUrl}" class="text-accent1 hover:underline absolute bottom-4 left-4">Learn More</a>
+            </div>
+      `;
+
+      // Append the li to the job list
+      jobList.appendChild(li);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+const categories = document.querySelectorAll('.category');
+
+categories.forEach(category => {
+  category.addEventListener('click', () => {
+    // Toggle background color
+    category.classList.toggle('bg-white');
+    category.classList.toggle('bg-primary-300');
+    category.classList.toggle('text-background-50'); // Change to the desired color
+
+    // You can also add logic here to filter job listings based on the selected category
+  });
+});
+
+
+//https://rapidapi.com/jaypat87/api/indeed11
+
