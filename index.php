@@ -33,7 +33,7 @@
                 ?>
                     <a href="login.php" type="button"
                     class="text-background-50 bg-primary1 hover:bg-primary-400 focus:ring-4 focus:outline-none text-md rounded-lg px-4 py-2 text-center mr-3 md:mr-0"> Log In</a>
-                    <a href="login.php" type="button"
+                    <a href="postajob.html" type="button"
                     class="text-background-50 ml-4 bg-primary1 hover:bg-primary-400 focus:ring-4 focus:outline-none text-md rounded-lg px-4 py-2 text-center mr-3 md:mr-0"> Post a Job</a>
                 <?php } ?>
                 <button data-collapse-toggle="navbar-cta" type="button"
