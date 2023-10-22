@@ -334,7 +334,7 @@ async function fetchAndPopulateJobs() {
       // Create an li element
       const li = document.createElement('li');
       li.className = 'job-listing-item';
-      li.classList.add('bg-background-50', 'shadow-lg', 'rounded-lg', 'mx-0', 'sm:mx-4', 'lg:mx-24', 'xl:mx-32', 'overflow-hidden', 'relative', 'mb-6', 'flex', 'flex-col', 'md:flex-row');
+      li.classList.add('bg-secondary-50', 'shadow-lg', 'max-w-xl', 'rounded-lg', 'mx-auto', 'overflow-hidden', 'relative', 'mb-6', 'flex', 'flex-col', 'md:flex-row');
 
       // Show the "new" box only if the date is "Just posted"
       const newTag = date === 'Just posted' ? `<span class="bg-red-500 text-background-50 py-1 px-2 absolute top-0 right-0 mt-2 mr-2 rounded-full font-semibold text-sm">New</span>` : '';
@@ -343,19 +343,20 @@ async function fetchAndPopulateJobs() {
       // <div class="text-gray-700 mb-2">
       //     <span class="font-semibold">Salary:</span> ${salary}
       // </div>
+      // bg-secondary-50 mx-auto shadow-md rounded-lg p-4 relative
 
       // Set its content
       li.innerHTML = `
-            <div class="bg-secondary-50 mx-auto max-w-xl shadow-md rounded-lg p-4 relative">
+             <div>
                 ${newTag}
-                <a href="${jobUrl}">
+                <a href="${jobUrl}" target="_blank">
                   <h2 class="text-xl font-semibold text-primary1 hover:underline mb-2">${jobTitle}</h2>
                 </a>
 
                 <p class="text-sm text-text1 mb-1">${companyName}</p>
                 <p class="text-sm text-text1 mb-10">${location}</p>
-                <div class="text-sm text-gray-400 absolute bottom-4 right-4">Posted ${date} days ago</div>
-                <a href="${companyUrl}" class="text-accent1 hover:underline absolute bottom-4 left-4">Learn More</a>
+                <div class="text-sm text-gray-400 absolute bottom-4 right-4 sm:left-4 sm:bottom-8 lg:left-4 lg:bottom-8">Posted ${date} days ago</div>
+                <a href="${companyUrl}" class="text-accent1 hover:underline absolute bottom-4 left-4" target="_blank">Learn More</a>
             </div>
       `;
 
