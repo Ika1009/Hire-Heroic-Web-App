@@ -1,8 +1,7 @@
 <?php
+session_start();
 
-session_start(); // Start the session
-
-require 'db_conn.php';  // Include the database connection
+require 'db_conn.php';
 
 header('Content-Type: application/json');
 
@@ -10,18 +9,19 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 if (isset($email, $password)) {
-    // Fetch hashed password and id from database
-    $stmt = $pdo->prepare('SELECT id, password FROM users WHERE email = ?');
+    // Fetch hashed password, job_preference, and location from database
+    $stmt = $pdo->prepare('SELECT password, job_preference, location FROM users WHERE email = ?');
     $stmt->execute([$email]);
 
     if ($user = $stmt->fetch()) {
-        $hashedPassword = $user['password']; 
+        $hashedPassword = $user['password'];
 
         // Verify the password against the hash
         if (password_verify($password, $hashedPassword)) {
-            $_SESSION['id'] = $user['id'];
+            $_SESSION['job_preference'] = $user['job_preference'];
+            $_SESSION['location'] = $user['location'];
             $_SESSION['logged_in'] = true;
-            echo json_encode(['status' => 'success', 'message' => 'Login successful', 'id' => $user['id']]);
+            echo json_encode(['status' => 'success', 'message' => 'Login successful']);
             exit;
         }
     }
@@ -32,5 +32,5 @@ if (isset($email, $password)) {
     echo json_encode(['status' => 'error', 'message' => 'Username and password are required']);
     exit;
 }
-
 ?>
+
