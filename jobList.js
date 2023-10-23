@@ -48,7 +48,8 @@ async function fetchAndPopulateJobs(searchTerm = 'Software Engineer', searchLoca
     }
 
     const jobList = document.getElementById('job-list');
-
+    jobList.innerHTML = '';
+    
     for (let i = 0; i < jobs.length; i++) {
       const job = jobs[i];
 
