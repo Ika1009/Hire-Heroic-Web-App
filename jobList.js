@@ -1,12 +1,12 @@
-let job_preference, location;
+let job_preference, searchLocation;
 fetch('./DB_APIs/getSessionData.php')
     .then(response => response.json())
     .then(data => {
         console.log(data);
         job_preference = data.job_preference;
-        location = data.location;
+        searchLocation = data.location;
         // Populate with jobs
-        fetchAndPopulateJobs(job_preference, location);
+        fetchAndPopulateJobs(job_preference, searchLocation);
     })
     .catch(error => {
         console.error('Error fetching session data:', error);
