@@ -16,7 +16,7 @@ fetch('./DB_APIs/getSessionData.php')
 async function fetchAndPopulateJobs(searchTerm = job_preference, searchLocation = searchLocation) {
   // Check for null or undefined and set defaults
   searchTerm = searchTerm || 'Software Engineer';
-  searchLocation = searchLocation || 'USA';
+  searchLocation = searchLocation || 'United States';
 
   const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
   const options = {
