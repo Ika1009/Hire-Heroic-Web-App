@@ -1,4 +1,14 @@
-
+let job_preference, location;
+fetch('getSessionData.php')
+    .then(response => response.json())
+    .then(data => {
+        job_preference = data.job_preference;
+        location = data.location;
+    })
+    .catch(error => {
+        console.error('Error fetching session data:', error);
+    });
+    
 const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
 const options = {
   method: 'POST',
@@ -14,16 +24,7 @@ const options = {
   })
 };
 
-let job_preference, location;
-fetch('getSessionData.php')
-    .then(response => response.json())
-    .then(data => {
-        jobPreference = data.job_preference;
-        location = data.location;
-    })
-    .catch(error => {
-        console.error('Error fetching session data:', error);
-    });
+
 
 
 fetchAndPopulateJobs(job_preference, location);
