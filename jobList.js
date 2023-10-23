@@ -1,8 +1,8 @@
-
 let job_preference, location;
-fetch('getSessionData.php')
+fetch('./DB_APIs/getSessionData.php')
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         job_preference = data.job_preference;
         location = data.location;
         // Populate with jobs
