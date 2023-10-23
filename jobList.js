@@ -1,19 +1,4 @@
 
-const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'X-RapidAPI-Key': '9212a11f9dmshc97838dd208b14dp1855e4jsn8d3a2ab0c424',
-    'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
-  },
-  body: JSON.stringify({
-    search_terms: 'Software Engineer',
-    location: 'United States',
-    page: '1'
-  })
-};
-
 let job_preference, location;
 fetch('getSessionData.php')
     .then(response => response.json())
