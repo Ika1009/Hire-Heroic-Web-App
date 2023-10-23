@@ -1,50 +1,4 @@
-const sample_response_body =
-[
-  {
-  "job_url": "https://www.linkedin.com/jobs/view/python-engineer-remote-flexible-at-cps-inc-3236855873?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=9V8%2B%2F3IyQ71PuZgAiN8BBw%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card",
-  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-engineer-remote-flexible-at-cps-inc-3236855873",
-  "company_name": "CPS, Inc.",
-  "company_url": "https://www.linkedin.com/company/cps4jobs?trk=public_jobs_jserp-result_job-search-card-subtitle",
-  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/cps4jobs",
-  "job_title": "Python Engineer - Remote Flexible",
-  "job_location": "Chicago, IL",
-  "posted_date": "2023-02-22",
-  "normalized_company_name": "Cps4jobs"
-  },
-  {
-  "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-doghouse-recruitment-3463573962?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=zTd%2B8Gp9f8dUOAwc5zt8HA%3D%3D&position=2&pageNum=0&trk=public_jobs_jserp-result_search-card",
-  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-doghouse-recruitment-3463573962",
-  "company_name": "Doghouse Recruitment",
-  "company_url": "https://nl.linkedin.com/company/doghouse-recruitment?trk=public_jobs_jserp-result_job-search-card-subtitle",
-  "linkedin_company_url_cleaned": "https://nl.linkedin.com/company/doghouse-recruitment",
-  "job_title": "Python Developer",
-  "job_location": "Chicago, IL",
-  "posted_date": "2023-02-05",
-  "normalized_company_name": "Doghouse recruitment"
-  },
-  {
-  "job_url": "https://www.linkedin.com/jobs/view/software-engineer-jupyterlab-python-integrations-at-pachyderm-inc-3412722302?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=KeLld%2BmsPknNHF15RxqW%2BQ%3D%3D&position=3&pageNum=0&trk=public_jobs_jserp-result_search-card",
-  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-jupyterlab-python-integrations-at-pachyderm-inc-3412722302",
-  "company_name": "Pachyderm Inc.",
-  "company_url": "https://www.linkedin.com/company/pachyderm-inc-?trk=public_jobs_jserp-result_job-search-card-subtitle",
-  "linkedin_company_url_cleaned": "https://www.linkedin.com/company/pachyderm-inc-",
-  "job_title": "Software Engineer (JupyterLab/Python/Integrations)",
-  "job_location": "Chicago, IL",
-  "posted_date": "2022-12-02",
-  "normalized_company_name": "Pachyderm inc "
-  },
-  {
-  "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-harvey-nash-3461872680?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=oGAXjv4XvffZRDpbkJ6DaA%3D%3D&position=4&pageNum=0&trk=public_jobs_jserp-result_search-card",
-  "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-harvey-nash-3461872680",
-  "company_name": "Harvey Nash",
-  "company_url": "https://uk.linkedin.com/company/harvey-nash?trk=public_jobs_jserp-result_job-search-card-subtitle",
-  "linkedin_company_url_cleaned": "https://uk.linkedin.com/company/harvey-nash",
-  "job_title": "Python Developer",
-  "job_location": "Chicago, IL",
-  "posted_date": "2023-02-03",
-  "normalized_company_name": "Harvey nash"
-  }
-  ]
+
 const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
 const options = {
   method: 'POST',
@@ -170,7 +124,53 @@ searchButton.addEventListener('click', function() {
 //     // You can also add logic here to filter job listings based on the selected category
 //   });
 // });
-
+// const sample_response_body =
+// [
+//   {
+//   "job_url": "https://www.linkedin.com/jobs/view/python-engineer-remote-flexible-at-cps-inc-3236855873?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=9V8%2B%2F3IyQ71PuZgAiN8BBw%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card",
+//   "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-engineer-remote-flexible-at-cps-inc-3236855873",
+//   "company_name": "CPS, Inc.",
+//   "company_url": "https://www.linkedin.com/company/cps4jobs?trk=public_jobs_jserp-result_job-search-card-subtitle",
+//   "linkedin_company_url_cleaned": "https://www.linkedin.com/company/cps4jobs",
+//   "job_title": "Python Engineer - Remote Flexible",
+//   "job_location": "Chicago, IL",
+//   "posted_date": "2023-02-22",
+//   "normalized_company_name": "Cps4jobs"
+//   },
+//   {
+//   "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-doghouse-recruitment-3463573962?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=zTd%2B8Gp9f8dUOAwc5zt8HA%3D%3D&position=2&pageNum=0&trk=public_jobs_jserp-result_search-card",
+//   "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-doghouse-recruitment-3463573962",
+//   "company_name": "Doghouse Recruitment",
+//   "company_url": "https://nl.linkedin.com/company/doghouse-recruitment?trk=public_jobs_jserp-result_job-search-card-subtitle",
+//   "linkedin_company_url_cleaned": "https://nl.linkedin.com/company/doghouse-recruitment",
+//   "job_title": "Python Developer",
+//   "job_location": "Chicago, IL",
+//   "posted_date": "2023-02-05",
+//   "normalized_company_name": "Doghouse recruitment"
+//   },
+//   {
+//   "job_url": "https://www.linkedin.com/jobs/view/software-engineer-jupyterlab-python-integrations-at-pachyderm-inc-3412722302?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=KeLld%2BmsPknNHF15RxqW%2BQ%3D%3D&position=3&pageNum=0&trk=public_jobs_jserp-result_search-card",
+//   "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-jupyterlab-python-integrations-at-pachyderm-inc-3412722302",
+//   "company_name": "Pachyderm Inc.",
+//   "company_url": "https://www.linkedin.com/company/pachyderm-inc-?trk=public_jobs_jserp-result_job-search-card-subtitle",
+//   "linkedin_company_url_cleaned": "https://www.linkedin.com/company/pachyderm-inc-",
+//   "job_title": "Software Engineer (JupyterLab/Python/Integrations)",
+//   "job_location": "Chicago, IL",
+//   "posted_date": "2022-12-02",
+//   "normalized_company_name": "Pachyderm inc "
+//   },
+//   {
+//   "job_url": "https://www.linkedin.com/jobs/view/python-developer-at-harvey-nash-3461872680?refId=5le2%2BahEYmTdA4V8zzON0Q%3D%3D&trackingId=oGAXjv4XvffZRDpbkJ6DaA%3D%3D&position=4&pageNum=0&trk=public_jobs_jserp-result_search-card",
+//   "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/python-developer-at-harvey-nash-3461872680",
+//   "company_name": "Harvey Nash",
+//   "company_url": "https://uk.linkedin.com/company/harvey-nash?trk=public_jobs_jserp-result_job-search-card-subtitle",
+//   "linkedin_company_url_cleaned": "https://uk.linkedin.com/company/harvey-nash",
+//   "job_title": "Python Developer",
+//   "job_location": "Chicago, IL",
+//   "posted_date": "2023-02-03",
+//   "normalized_company_name": "Harvey nash"
+//   }
+//   ]
 
 //https://rapidapi.com/jaypat87/api/indeed11
 
