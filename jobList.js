@@ -1,14 +1,4 @@
-let job_preference, location;
-fetch('getSessionData.php')
-    .then(response => response.json())
-    .then(data => {
-        job_preference = data.job_preference;
-        location = data.location;
-    })
-    .catch(error => {
-        console.error('Error fetching session data:', error);
-    });
-    
+
 const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
 const options = {
   method: 'POST',
@@ -24,10 +14,18 @@ const options = {
   })
 };
 
-
-
-
-fetchAndPopulateJobs(job_preference, location);
+let job_preference, location;
+fetch('getSessionData.php')
+    .then(response => response.json())
+    .then(data => {
+        job_preference = data.job_preference;
+        location = data.location;
+        // Populate with jobs
+        fetchAndPopulateJobs(job_preference, location);
+    })
+    .catch(error => {
+        console.error('Error fetching session data:', error);
+    });
 
 async function fetchAndPopulateJobs(searchTerm = 'Software Engineer', searchLocation = 'United States') {
   const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
