@@ -1,4 +1,5 @@
 let job_preference, searchLocation;
+
 fetch('./DB_APIs/getSessionData.php')
     .then(response => response.json())
     .then(data => {
@@ -12,7 +13,7 @@ fetch('./DB_APIs/getSessionData.php')
         console.error('Error fetching session data:', error);
     });
 
-async function fetchAndPopulateJobs(searchTerm = 'Software Engineer', searchLocation = 'United States') {
+async function fetchAndPopulateJobs(searchTerm = job_preference, searchLocation = searchLocation) {
   const url = 'https://linkedin-jobs-search.p.rapidapi.com/';
   const options = {
     method: 'POST',
@@ -49,7 +50,7 @@ async function fetchAndPopulateJobs(searchTerm = 'Software Engineer', searchLoca
 
     const jobList = document.getElementById('job-list');
     jobList.innerHTML = '';
-    
+
     for (let i = 0; i < jobs.length; i++) {
       const job = jobs[i];
 
