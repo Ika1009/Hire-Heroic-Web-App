@@ -55,7 +55,7 @@
                         <a href="index.php"
                             class="block hover:underline py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Home</a>
                     </li>
-                    <?php
+                    <!-- <?php
                         // Check if the user is logged in
                         if (isset($_SESSION['id'])) {
                             $href = 'jobList.html'; // Set the link for logged-in users
@@ -88,7 +88,7 @@
                                 Sign In
                             </a>
                         </li>
-                <?php } ?>
+                <?php } ?> -->
                 </ul>
             </div>
         </div>
@@ -146,14 +146,21 @@
         </div>
     </section>
 
+    <section class="pt-16 pb-32">
+            <div class="">
+                <ul class="job-list" id="job-list">
+                    
+                </ul>
+            </div>
+    </section>
+
     <!-- Call to Action Section -->
     <section class=" pt-16 pb-32">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl text-primary1 lg:text-4xl font-semibold mb-4">Ready to Get Started?</h2>
             <p class="text-xl mb-8">Join our platform and start your job search or post a job listing today.</p>
-            <a href="register.html"
-                class="bg-primary1 hover:bg-primary-400 text-background-50 px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary-400">Sign
-                Up Now</a>
+            <a href="login.php"
+                class="bg-primary1 hover:bg-primary-400 text-background-50 px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary-400">Log In Now</a>
         </div>
     </section>
 
@@ -184,7 +191,7 @@
                     <li>
                         <a href="index.php" class="mr-4 hover:underline text-base md:mr-6 ">Home</a>
                     </li>
-                        <?php
+                        <!-- <?php
                         // Check if the user is logged in
                         if (isset($_SESSION['id'])) {
                             $href = 'jobList.html'; // Set the link for logged-in users
@@ -207,11 +214,14 @@
                     </li>
                 <?php
                     } else { 
-                ?>
+                ?> -->
                     <li>
                         <a href="login.php" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-background-50 bg-primary1 text-base md:mr-6 ">Log In</a>
                     </li>
-                <?php } ?>
+                    <li>
+                        <a href="postajob.php" class="mr-4 hover:underline px-4 py-2 items-center rounded-lg text-background-50 bg-primary1 text-base md:mr-6 ">Post a Job</a>
+                    </li>
+                <!-- <?php } ?> -->
                 </ul>
             </div>
             <hr class="my-2 border-gray-300 sm:mx-auto lg:my-4" />
@@ -219,6 +229,7 @@
                     class="hover:underline text-primary1">Hire Heroic™</a>. All Rights Reserved.</span>
         </div>
     </footer>
+    <script scr="index.js"></script>
 </body>
 
 </html>
