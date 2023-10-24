@@ -229,7 +229,7 @@
                     class="hover:underline text-primary1">Hire Heroic™</a>. All Rights Reserved.</span>
         </div>
     </footer>
-    <script scr="index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
