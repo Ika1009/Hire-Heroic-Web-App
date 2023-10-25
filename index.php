@@ -52,7 +52,7 @@
     <!-- Navbar -->
     <nav class="bg-transparent border border-b-gray-300">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:pr-8 pr-0">
-            <a href="index.html" class="flex items-center">
+            <a href="index.php" class="flex items-center">
                 <img src="images/UltraCv.png" class="w-20 mr-3" alt="UltraCv Logo" />
             </a>
             <div class="flex md:order-2">
@@ -82,7 +82,7 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
                     <li>
-                        <a href="index.html"
+                        <a href="index.php"
                             class="block hover:underline py-2 pl-3 pr-4 text-text1 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-custom-purple md:p-0">Home</a>
                     </li>
                     <!-- <?php
@@ -222,12 +222,12 @@
     <footer class="bg-transparent rounded-lg border-t-gray-300 border ">
         <div class="w-full max-w-screen-xl mx-auto pb-2 px-4 md:pb-4">
             <div class="sm:flex sm:items-center sm:justify-between">
-                <a href="index.html" class="flex items-center">
+                <a href="index.php" class="flex items-center">
                     <img src="images/UltraCv.png" class="w-24" alt="UltraCv Logo" />
                 </a>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
                     <li>
-                        <a href="index.html" class="mr-4 hover:underline text-base md:mr-6 ">Home</a>
+                        <a href="index.php" class="mr-4 hover:underline text-base md:mr-6 ">Home</a>
                     </li>
                     <!-- <?php
                         // Check if the user is logged in

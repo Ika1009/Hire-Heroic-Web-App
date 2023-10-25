@@ -36,7 +36,7 @@ form.addEventListener("submit", function(event) {
     .then(data => {
         // Navigate to another page only if the response status is 200
         if (data.statusCode === 200) {
-            window.location.href = './index.html'; 
+            window.location.href = './index.php'; 
         } else {
             // Alert the user only if the operation wasn't successful
             alert(data.message);
