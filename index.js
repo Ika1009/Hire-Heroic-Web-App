@@ -5,7 +5,7 @@ const sample_response_body =[
       "company_name": "Lockheed Martin",
       "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
       "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
-      "job_title": "Software Engineer ��� Early Career",
+      "job_title": "Software Backend Engineer",
       "job_location": "Colorado Springs, CO",
       "posted_date": "2023-10-24",
       "normalized_company_name": "Lockheed martin"
@@ -27,7 +27,7 @@ const sample_response_body =[
       "company_name": "Lockheed Martin",
       "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
       "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
-      "job_title": "Software Engineer - Early Career",
+      "job_title": "Software Engineer - Early Career Front end",
       "job_location": "Herndon, VA",
       "posted_date": "2023-10-18",
       "normalized_company_name": "Lockheed martin"
