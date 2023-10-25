@@ -137,10 +137,6 @@
             <p class="text-base text-secondary-50 md:text-xl lg:text-2xl mb-8">Search for job opportunities or create
                 your own job listing.</p>
             <div class="flex flex-col md:flex-row mx-4 md:mx-8 justify-center items-center">
-                <input type="text" placeholder="Search for jobs"
-                    class="w-full md:w-64 lg:w-96 px-4 py-2 rounded-t-lg md:rounded-t-none md:rounded-l-lg focus:outline-none focus:ring focus:border-blue-300 mb-0 md:mb-2 text-sm md:text-base lg:text-lg">
-                <button
-                    class="w-full md:w-32 mb-2 lg:w-48 bg-primary1 text-white px-4 py-2 rounded-b-lg md:rounded-b-none md:rounded-r-lg hover:bg-primary-400 text-sm md:text-base lg:text-lg">Search</button>
             </div>
         </div>
     </section>
