@@ -589,7 +589,7 @@ async function fetchAndPopulateJobs() {
 
                 <p class="text-sm text-text1 mb-1">${companyName}</p>
                 <p class="text-sm text-text1 mb-10">${location}</p>
-                <div class="text-sm text-gray-400 absolute bottom-4 right-4">Posted ${date} days ago</div>
+                <div class="text-sm text-gray-400 absolute bottom-4 right-4">Posted on ${date}</div>
                 <a href="${companyUrl}" class="text-accent1 text-lg hover:underline absolute bottom-4 left-4" target="_blank">Learn More</a>
       `;
 
