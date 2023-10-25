@@ -1,5 +1,270 @@
-
-
+const sample_response_body =[
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-%EF%BF%BD%EF%BF%BD%EF%BF%BD-early-career-at-lockheed-martin-3746286426?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=cAh1S%2BK%2FMnl6sZ5c690Oiw%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-%EF%BF%BD%EF%BF%BD%EF%BF%BD-early-career-at-lockheed-martin-3746286426",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer ��� Early Career",
+      "job_location": "Colorado Springs, CO",
+      "posted_date": "2023-10-24",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739450305?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=zX%2B3O5jL8kR7QibTrN%2FBdA%3D%3D&position=2&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739450305",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Herndon, VA",
+      "posted_date": "2023-10-18",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739450304?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=9559JYqONOHuhPq9dWnYkw%3D%3D&position=3&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739450304",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Herndon, VA",
+      "posted_date": "2023-10-18",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739448781?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=4hFt78MgSJzez17aDY7ccg%3D%3D&position=4&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739448781",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Herndon, VA",
+      "posted_date": "2023-10-18",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-internship-at-clever-inc-3733298521?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=9KssriBkG9wdEfAU%2Bym98g%3D%3D&position=5&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-internship-at-clever-inc-3733298521",
+      "company_name": "Clever Inc.",
+      "company_url": "https://www.linkedin.com/company/clever-inc-?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/clever-inc-",
+      "job_title": "Software Engineer - Internship",
+      "job_location": "San Francisco, CA",
+      "posted_date": "2023-10-05",
+      "normalized_company_name": "Clever inc "
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739448782?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=Gxt3TFZHWPc4kHbX8t5jZQ%3D%3D&position=6&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739448782",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Herndon, VA",
+      "posted_date": "2023-10-18",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739452161?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=LnMUA3wRnae1eC8HgkL7mw%3D%3D&position=7&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739452161",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Herndon, VA",
+      "posted_date": "2023-10-18",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-fullstack-at-vellum-3742824351?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=t5aFVh%2BIsYiKIW21hjxs1Q%3D%3D&position=8&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-frontend-fullstack-at-vellum-3742824351",
+      "company_name": "Vellum",
+      "company_url": "https://www.linkedin.com/company/vellumai?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/vellumai",
+      "job_title": "Software Engineer - Frontend / Fullstack",
+      "job_location": "San Francisco, CA",
+      "posted_date": "2023-10-19",
+      "normalized_company_name": "Vellumai"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-frontend-fullstack-at-vellum-3742828071?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=mf5ws1Xw3zPG7UoyDUZ%2Fcg%3D%3D&position=9&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-frontend-fullstack-at-vellum-3742828071",
+      "company_name": "Vellum",
+      "company_url": "https://www.linkedin.com/company/vellumai?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/vellumai",
+      "job_title": "Software Engineer - Frontend / Fullstack",
+      "job_location": "New York, NY",
+      "posted_date": "2023-10-19",
+      "normalized_company_name": "Vellumai"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739453078?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=q9eDevOTd7f5Hh1GGwiXFw%3D%3D&position=10&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3739453078",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Fort Worth, TX",
+      "posted_date": "2023-10-19",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/website-developer-entry-level-at-team-remotely-inc-3748524708?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=tvb0vp8tsS66MX9wQg4ikQ%3D%3D&position=11&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/website-developer-entry-level-at-team-remotely-inc-3748524708",
+      "company_name": "Team Remotely Inc",
+      "company_url": "https://www.linkedin.com/company/team-remotely-inc?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/team-remotely-inc",
+      "job_title": "Website Developer (Entry Level)",
+      "job_location": "Los Angeles, CA",
+      "posted_date": "2023-10-25",
+      "normalized_company_name": "Team remotely inc"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/jr-software-developer-at-nuarch-3745779743?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=%2FFeGC8RGAWTjHtLa1ZLx%2Bw%3D%3D&position=12&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/jr-software-developer-at-nuarch-3745779743",
+      "company_name": "nuArch",
+      "company_url": "https://www.linkedin.com/company/nuarch?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/nuarch",
+      "job_title": "Jr. Software Developer",
+      "job_location": "New York, NY",
+      "posted_date": "2023-10-21",
+      "normalized_company_name": "Nuarch"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/%EF%BF%BD%EF%BF%BD%EF%BF%BDfull-stack-web-developer-entry-level-at-team-remotely-inc-3748522872?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=20tRHhe9qEj302bxpB4l4A%3D%3D&position=13&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/%EF%BF%BD%EF%BF%BD%EF%BF%BDfull-stack-web-developer-entry-level-at-team-remotely-inc-3748522872",
+      "company_name": "Team Remotely Inc",
+      "company_url": "https://www.linkedin.com/company/team-remotely-inc?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/team-remotely-inc",
+      "job_title": "���Full Stack Web Developer (Entry Level)",
+      "job_location": "Tampa, FL",
+      "posted_date": "2023-10-25",
+      "normalized_company_name": "Team remotely inc"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/front-end-software-engineer-react-at-nike-3745194274?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=VgUxeBDmzmhPchoNvDWs7Q%3D%3D&position=14&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/front-end-software-engineer-react-at-nike-3745194274",
+      "company_name": "Nike",
+      "company_url": "https://www.linkedin.com/company/nike?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/nike",
+      "job_title": "Front End Software Engineer - React",
+      "job_location": "Beaverton, OR",
+      "posted_date": "2023-10-24",
+      "normalized_company_name": "Nike"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-graduating-spring-summer-24-at-pomelo-inc-3742518836?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=MStU%2FBDxP2kp3PCpdhAaYA%3D%3D&position=15&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-graduating-spring-summer-24-at-pomelo-inc-3742518836",
+      "company_name": "Pomelo, Inc.",
+      "company_url": "https://www.linkedin.com/company/pomelo-card?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/pomelo-card",
+      "job_title": "Software Engineer (Graduating Spring/Summer '24)",
+      "job_location": "San Francisco, CA",
+      "posted_date": "2023-10-09",
+      "normalized_company_name": "Pomelo card"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-lockheed-martin-3746280973?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=tYHGPV7E9WDFmRF%2F0oEQhg%3D%3D&position=16&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-lockheed-martin-3746280973",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer- Intern",
+      "job_location": "Colorado Springs, CO",
+      "posted_date": "2023-10-24",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-productiv-3733297622?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=Rt1194nK3PbEXPp0LM6lAw%3D%3D&position=17&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-intern-at-productiv-3733297622",
+      "company_name": "Productiv",
+      "company_url": "https://www.linkedin.com/company/productiv?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/productiv",
+      "job_title": "Software Engineer Intern",
+      "job_location": "Bellevue, WA",
+      "posted_date": "2023-10-05",
+      "normalized_company_name": "Productiv"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/junior-software-development-engineer-at-team-remotely-inc-3748527198?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=kE2Wb9HU7hP9Y2KaYAFmig%3D%3D&position=18&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/junior-software-development-engineer-at-team-remotely-inc-3748527198",
+      "company_name": "Team Remotely Inc",
+      "company_url": "https://www.linkedin.com/company/team-remotely-inc?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/team-remotely-inc",
+      "job_title": "Junior Software Development Engineer",
+      "job_location": "Phoenix, AZ",
+      "posted_date": "2023-10-25",
+      "normalized_company_name": "Team remotely inc"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-slack-multiple-levels-at-slack-3743003590?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=brnR2u3JIN4qF%2BXXwiYSWw%3D%3D&position=19&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-backend-slack-multiple-levels-at-slack-3743003590",
+      "company_name": "Slack",
+      "company_url": "https://www.linkedin.com/company/tiny-spec-inc?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/tiny-spec-inc",
+      "job_title": "Software Engineer, Backend - Slack (Multiple Levels)",
+      "job_location": "Minnesota, United States",
+      "posted_date": "2023-09-30",
+      "normalized_company_name": "Tiny spec inc"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-new-york-city-at-january-3743972948?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=u%2BLRwvCvXc1SCpxoN%2FU41g%3D%3D&position=20&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-new-york-city-at-january-3743972948",
+      "company_name": "January",
+      "company_url": "https://www.linkedin.com/company/januarytechnologies?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/januarytechnologies",
+      "job_title": "Software Engineer (New York City)",
+      "job_location": "New York, NY",
+      "posted_date": "2023-10-19",
+      "normalized_company_name": "Januarytechnologies"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-associate-at-lockheed-martin-3748281477?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=Bx8fBzfMl9%2F5A78G3VW4YQ%3D%3D&position=21&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-associate-at-lockheed-martin-3748281477",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer Associate",
+      "job_location": "Boulder, CO",
+      "posted_date": "2023-10-24",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/web-developer-intern-at-shure-incorporated-3748260969?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=vDi7gWhr1PkrSu2F3XHuwQ%3D%3D&position=22&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/web-developer-intern-at-shure-incorporated-3748260969",
+      "company_name": "Shure Incorporated",
+      "company_url": "https://www.linkedin.com/company/shure-incorporated?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/shure-incorporated",
+      "job_title": "Web Developer Intern",
+      "job_location": "Chicago, IL",
+      "posted_date": "2023-09-29",
+      "normalized_company_name": "Shure incorporated"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3746285641?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=sbGttMoyobkNYDEpJ8utHQ%3D%3D&position=23&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3746285641",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Huntsville, AL",
+      "posted_date": "2023-10-24",
+      "normalized_company_name": "Lockheed martin"
+  },
+  {
+      "job_url": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3746280977?refId=PtNyoy8MWsZoxnvFV110mw%3D%3D&trackingId=zFL9iSAH5mQnueHRQEilqQ%3D%3D&position=24&pageNum=0&trk=public_jobs_jserp-result_search-card",
+      "linkedin_job_url_cleaned": "https://www.linkedin.com/jobs/view/software-engineer-early-career-at-lockheed-martin-3746280977",
+      "company_name": "Lockheed Martin",
+      "company_url": "https://www.linkedin.com/company/lockheed-martin?trk=public_jobs_jserp-result_job-search-card-subtitle",
+      "linkedin_company_url_cleaned": "https://www.linkedin.com/company/lockheed-martin",
+      "job_title": "Software Engineer - Early Career",
+      "job_location": "Huntsville, AL",
+      "posted_date": "2023-10-24",
+      "normalized_company_name": "Lockheed martin"
+  }
+]
+/*
 const sample_response_body =
 [
   {
@@ -277,7 +542,7 @@ const sample_response_body =
   "posted_date": "2023-01-14",
   "normalized_company_name": "Diverselynx"
   }
-  ]
+  ]*/
 
 fetchAndPopulateJobs();
 

@@ -1,5 +1,6 @@
 let job_preference, searchLocation;
 
+/*
 fetch('./DB_APIs/getSessionData.php')
     .then(response => response.json())
     .then(data => {
@@ -12,8 +13,9 @@ fetch('./DB_APIs/getSessionData.php')
     .catch(error => {
         console.error('Error fetching session data:', error);
     });
-
-async function fetchAndPopulateJobs(searchTerm = job_preference, searchLocation = searchLocation) {
+*/
+fetchAndPopulateJobs(job_preference, searchLocation);
+async function fetchAndPopulateJobs(searchTerm, searchLocation) {
   // Check for null or undefined and set defaults
   searchTerm = searchTerm || 'Software Engineer';
   searchLocation = searchLocation || 'United States';
@@ -22,8 +24,8 @@ async function fetchAndPopulateJobs(searchTerm = job_preference, searchLocation 
   const options = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      'X-RapidAPI-Key': '9212a11f9dmshc97838dd208b14dp1855e4jsn8d3a2ab0c424',
+      'content-type': 'application/json',
+      'X-RapidAPI-Key': 'b47808f2fcmshd2bc8251d15f49ap1fcd30jsncb99221f7f92',
       'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
     },
     body: JSON.stringify({
