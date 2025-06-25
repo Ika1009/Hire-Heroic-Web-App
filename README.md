@@ -40,16 +40,11 @@ Job listings are sourced via **integrated third-party job APIs**, giving users a
 
 Here's a glimpse of the platform, showcasing its clean UI and powerful features.
 
-| Real-Time Job Feed | Detailed Job View & Apply |
-| :----------------: | :-----------------------: |
-| <img src="./screenshots/promo(1).png"> | <img src="./screenshots/promo(2).png"> |
-
-| Advanced Search & Filters | Saved Jobs Dashboard |
-| :-----------------------: | :--------------------: |
-| <img src="./screenshots/promo(3).png"> | <img src="./screenshots/promo(4).png"> |
-
-### Fully Responsive Design
-<img src="./screenshots/promo(5).png">
+![HireHeroic](./screenshots/promo (1).png)
+![HireHeroic](./screenshots/promo (2).png)
+![HireHeroic](./screenshots/promo (3).png)
+![HireHeroic](./screenshots/promo (4).png)
+![HireHeroic](./screenshots/promo (5).png)
 
 ---
 📌 **This project is part of my professional portfolio**. It demonstrates my ability to execute a real-world, client-facing application from scratch, both aesthetically and functionally.
