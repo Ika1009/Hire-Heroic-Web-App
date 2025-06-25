@@ -1,7 +1,5 @@
 # 💼 HireHeroic – Full-Stack Job Aggregator Platform
 
-![HireHeroic Logo](./images/UltraCv.png)
-
 **HireHeroic** is a professional-grade job aggregator web application developed as a Fiverr project. I was responsible for **the entire product lifecycle** — from UI/UX design to full backend development — delivering a scalable and visually appealing platform for real-time job discovery.
 
 ---
